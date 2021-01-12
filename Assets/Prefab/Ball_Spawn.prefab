@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4870389102033675515
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4870389102033675512}
+  - component: {fileID: 882783110608073781}
+  m_Layer: 0
+  m_Name: Ball_Spawn
+  m_TagString: Untagged
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4870389102033675512
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4870389102033675515}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.94, y: -2.14, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &882783110608073781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4870389102033675515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8769b4dfd202944a855dced0d45777e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  momentoNoTempoDoGame: b4000000a2000000900000007e0000006c0000005a00000048000000360000002400000012000000
+  ball_GO:
+  - {fileID: 5173178571875108674, guid: 5151ac1d623398845b6326310b3f4206, type: 3}
+  - {fileID: 5173178571875108674, guid: 952c019d51bc16643a7e000c6542400f, type: 3}
+  - {fileID: 5173178571875108674, guid: 96eb7f98693657649bb68cc9ed243ce8, type: 3}
+  - {fileID: 5173178571875108674, guid: 8f31516bed81ee14f9be3de792476dcf, type: 3}
+  - {fileID: 5173178571875108674, guid: 76901110600d7e249b7ec185f317f442, type: 3}
+  ball_SpawnPosition: {fileID: 4870389102033675512}
+  ball_CanSpawn: 1
+  zombie_CanSPawns: 1
+  zombie_GO:
+  - {fileID: 4504497657893403596, guid: 604b3d5097fc6d641bc7fafc7b0bbb59, type: 3}
+  - {fileID: 395442025020304831, guid: 686dcd6d699ed83458bab1349b440a9b, type: 3}
+  - {fileID: 8974632448063250226, guid: bbc90ea1fce310c468bb00555590629f, type: 3}
+  - {fileID: 727050540728461898, guid: 681d69433fbe88145a7d75c1ae2aecca, type: 3}
+  - {fileID: 2671626407565454216, guid: 177292490fd70114b9cf37986bf9eab6, type: 3}
+  - {fileID: 8919781676040293161, guid: 0f42e82bc1136254e87b5ffd859e9389, type: 3}
+  zombie_SpawnPosition: {fileID: 0}
+  zombie_SpawnCD: 10
+  zombie_SpawnNumber: 0
+  zombie_CanSPawn: 1
+  inspectorSelectZombie: 5
+  inspectorSelectZombies: 3
+  condition_zombiesKillForWinLevel: 12
+  condition_timeToLevelWinLevel: 0
