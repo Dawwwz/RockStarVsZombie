@@ -344,6 +344,7 @@ GameObject:
   - component: {fileID: 5657187577159302290}
   - component: {fileID: 8714831765119097499}
   - component: {fileID: 7587919803540955254}
+  - component: {fileID: 4251029769326571759}
   m_Layer: 9
   m_Name: zombeFast
   m_TagString: inimigo
@@ -469,28 +470,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f32a4e500ffcdad40882c5a8be349d45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnController: {fileID: 0}
   hud: {fileID: 0}
-  lifeBarPref: {fileID: 1649073032665256936, guid: 5cdd3970d528d19479580eff58f32dc8, type: 3}
-  lifeBartrue: {fileID: 0}
+  leafControler: {fileID: 0}
+  particle: {fileID: 0}
+  hitTarget: {fileID: 0}
+  rockMode: {fileID: 0}
+  levelManager: {fileID: 0}
+  lifeBar: {fileID: 4251029769326571759}
   lifeBarPos: {fileID: 5225423219436639900}
-  explodiu: 0
-  inimigoRB: {fileID: 0}
-  vidaMax: 1
-  vida: 1
-  velocidade: 2
-  podeDarDano: 1
-  dano: 0.5
-  attackSpeed: 1
-  coinGO: {fileID: 2499574143104783894, guid: 22d71a0b69c052647a1fbeaaf8deeb01, type: 3}
-  leafGO: {fileID: 0}
-  "posicaoDaCabe\xE7a": {fileID: 7194224784370799107}
-  bola:
-    serializedVersion: 2
-    m_Bits: 1024
-  rangeDaCabeca: 0.42
-  colidiuComAbola: 0
-  pararDeColidir: 0
-  leafChanceSpawn: 0
+  lifeMax: 1
+  life: 1
+  dead: 0
+  hitPower: 1
+  hitSpeed: 0.5
+  hitBool: 1
+  hitBoolAux: 0
+  movementBool: 1
+  movementBooll: 1
+  movementVelocity: -1
+  movementVelocityMax: -1
+  rb: {fileID: 0}
+  rigAnime: {fileID: 0}
 --- !u!50 &7587919803540955254
 Rigidbody2D:
   serializedVersion: 4
@@ -512,6 +513,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &4251029769326571759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4504497657893403596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0742971c9c22c54409560896216de1d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hud: {fileID: 0}
+  lifeBarPrefab: {fileID: 1649073032665256936, guid: 5cdd3970d528d19479580eff58f32dc8, type: 3}
+  lifeBarGameObject: {fileID: 0}
 --- !u!1 &4553078588887722705
 GameObject:
   m_ObjectHideFlags: 0

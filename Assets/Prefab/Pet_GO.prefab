@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7386359549031972469}
   - component: {fileID: 7386359549031972478}
   - component: {fileID: 7386359549916516020}
+  - component: {fileID: 1715939243}
   m_Layer: 13
   m_Name: Pet_GO
   m_TagString: pet
@@ -121,21 +122,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b328dffae5792147b5c83271cdc27a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnController: {fileID: 0}
   hud: {fileID: 0}
-  lifeBarPref: {fileID: 1649073032665256936, guid: cf4b340083f0a8e469afecf0ed73179e, type: 3}
-  lifeBarTrue: {fileID: 0}
+  leafControler: {fileID: 0}
+  particle: {fileID: 0}
+  hitTarget: {fileID: 0}
+  rockMode: {fileID: 0}
+  levelManager: {fileID: 0}
+  lifeBar: {fileID: 1715939243}
   lifeBarPos: {fileID: 7386359549112466347}
-  petRB: {fileID: 0}
+  lifeMax: 2
+  life: 2
+  dead: 0
+  hitPower: 0
+  hitSpeed: 0
+  hitBool: 0
+  hitBoolAux: 0
+  movementBool: 1
+  movementBooll: 0
+  movementVelocity: 1
+  movementVelocityMax: 1
+  rb: {fileID: 0}
+  rigAnime: {fileID: 0}
   voltando: 0
-  vel: 2
-  pegaxxx: 0
-  leaf: 0
-  vida: 5
-  petVidaMax: 5
+  indo: 0
+  parado: 0
   buffado: 0
-  podeDarDano: 1
-  attackSpeed: 0.7
-  petDano: 0.2
   petTelp: 1
 --- !u!70 &7386359549031972469
 CapsuleCollider2D:
@@ -146,7 +158,7 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 7386359549031972468}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: d13471d0d4d41d841b56fb2575963ebe, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -160,11 +172,11 @@ PlatformEffector2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7386359549031972468}
-  m_Enabled: 1
+  m_Enabled: 0
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 131328
+    m_Bits: 393216
   m_RotationalOffset: 217.35
   m_UseOneWay: 1
   m_UseOneWayGrouping: 1
@@ -191,6 +203,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1715939243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7386359549031972468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0742971c9c22c54409560896216de1d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hud: {fileID: 0}
+  lifeBarPrefab: {fileID: 1649073032665256936, guid: cf4b340083f0a8e469afecf0ed73179e, type: 3}
+  lifeBarGameObject: {fileID: 0}
 --- !u!1 &7386359549112466346
 GameObject:
   m_ObjectHideFlags: 0

@@ -31,7 +31,47 @@ public class AudioManager : MonoBehaviour
     void Start()
     {
         SoundBG(5);
-    }
+        /*
+        switch (SceneManager.GetActiveScene().name)
+        {
+            case "Level1":
+                AudioManager.audioManager.SoundBG(1);
+                AudioManager.audioManager.guitarBG(1);
+                break;
+            case "Level2":
+                AudioManager.audioManager.SoundBG(2);
+                AudioManager.audioManager.guitarBG(2);
+                break;
+            case "Level3":
+                AudioManager.audioManager.SoundBG(3);
+                AudioManager.audioManager.guitarBG(3);
+                break;
+            case "Level4":
+                AudioManager.audioManager.SoundBG(4);
+                AudioManager.audioManager.guitarBG(4);
+                break;
+            case "Level5":
+                AudioManager.audioManager.SoundBG(5);
+                AudioManager.audioManager.guitarBG(5);
+                break;
+            case "Level6":
+                AudioManager.audioManager.SoundBG(6);
+                AudioManager.audioManager.guitarBG(6);
+                break;
+            case "Level7":
+                AudioManager.audioManager.SoundBG(7);
+                AudioManager.audioManager.guitarBG(7);
+                break;
+            case "Level8":
+                AudioManager.audioManager.SoundBG(8);
+                AudioManager.audioManager.guitarBG(8);
+                break;
+            case "Level9":
+                AudioManager.audioManager.SoundBG(9);
+                AudioManager.audioManager.guitarBG(9);
+                break;
+        */
+        }
     public void Update()
     {
         

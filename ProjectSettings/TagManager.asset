@@ -14,6 +14,9 @@ TagManager:
   - ground
   - fundo
   - audio
+  - PlayerSub
+  - Canvas_WP
+  - Flecha
   layers:
   - Default
   - TransparentFX
@@ -33,7 +36,7 @@ TagManager:
   - zombieHands
   - zombiebody
   - CHAO
-  - 
+  - PlayerSub
   - 
   - 
   - 

@@ -516,6 +516,7 @@ GameObject:
   - component: {fileID: 395442025020304817}
   - component: {fileID: 395442025020304830}
   - component: {fileID: 395442025020304821}
+  - component: {fileID: -5290857043331089995}
   m_Layer: 9
   m_Name: zombeTank
   m_TagString: inimigo
@@ -642,28 +643,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f32a4e500ffcdad40882c5a8be349d45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnController: {fileID: 0}
   hud: {fileID: 0}
-  lifeBarPref: {fileID: 1649073032665256936, guid: 5cdd3970d528d19479580eff58f32dc8, type: 3}
-  lifeBartrue: {fileID: 0}
+  leafControler: {fileID: 0}
+  particle: {fileID: 0}
+  hitTarget: {fileID: 0}
+  rockMode: {fileID: 0}
+  levelManager: {fileID: 0}
+  lifeBar: {fileID: -5290857043331089995}
   lifeBarPos: {fileID: 395442024461560205}
-  explodiu: 0
-  inimigoRB: {fileID: 0}
-  vidaMax: 5
-  vida: 5
-  velocidade: 0.7
-  podeDarDano: 1
-  dano: 0.5
-  attackSpeed: 1
-  coinGO: {fileID: 2499574143104783894, guid: 22d71a0b69c052647a1fbeaaf8deeb01, type: 3}
-  leafGO: {fileID: 0}
-  "posicaoDaCabe\xE7a": {fileID: 395442025412091216}
-  bola:
-    serializedVersion: 2
-    m_Bits: 1024
-  rangeDaCabeca: 0.91
-  colidiuComAbola: 0
-  pararDeColidir: 0
-  leafChanceSpawn: 0
+  lifeMax: 5
+  life: 5
+  dead: 0
+  hitPower: 2
+  hitSpeed: 0.5
+  hitBool: 1
+  hitBoolAux: 0
+  movementBool: 1
+  movementBooll: 0
+  movementVelocity: -0.5
+  movementVelocityMax: -0.5
+  rb: {fileID: 0}
+  rigAnime: {fileID: 0}
 --- !u!50 &395442025020304830
 Rigidbody2D:
   serializedVersion: 4
@@ -701,6 +702,21 @@ CapsuleCollider2D:
   m_Offset: {x: -0.1729011, y: 0.01902759}
   m_Size: {x: 0.49452507, y: 0.7320874}
   m_Direction: 0
+--- !u!114 &-5290857043331089995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 395442025020304831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0742971c9c22c54409560896216de1d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hud: {fileID: 0}
+  lifeBarPrefab: {fileID: 1649073032665256936, guid: 5cdd3970d528d19479580eff58f32dc8, type: 3}
+  lifeBarGameObject: {fileID: 0}
 --- !u!1 &395442025124028395
 GameObject:
   m_ObjectHideFlags: 0

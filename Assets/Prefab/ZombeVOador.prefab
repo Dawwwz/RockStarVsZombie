@@ -73,6 +73,7 @@ GameObject:
   - component: {fileID: 2671626407565454220}
   - component: {fileID: 2671626407565454219}
   - component: {fileID: 2671626407565454218}
+  - component: {fileID: 653955481}
   m_Layer: 9
   m_Name: ZombeVOador
   m_TagString: inimigo
@@ -217,28 +218,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f32a4e500ffcdad40882c5a8be349d45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnController: {fileID: 0}
   hud: {fileID: 0}
-  lifeBarPref: {fileID: 1649073032665256936, guid: 5cdd3970d528d19479580eff58f32dc8, type: 3}
-  lifeBartrue: {fileID: 0}
+  leafControler: {fileID: 0}
+  particle: {fileID: 0}
+  hitTarget: {fileID: 0}
+  rockMode: {fileID: 0}
+  levelManager: {fileID: 0}
+  lifeBar: {fileID: 653955481}
   lifeBarPos: {fileID: 1232925626}
-  explodiu: 0
-  inimigoRB: {fileID: 0}
-  vidaMax: 2
-  vida: 2
-  velocidade: 1
-  podeDarDano: 1
-  dano: 0.5
-  attackSpeed: 1
-  coinGO: {fileID: 2499574143104783894, guid: 22d71a0b69c052647a1fbeaaf8deeb01, type: 3}
-  leafGO: {fileID: 0}
-  "posicaoDaCabe\xE7a": {fileID: 9081329367669711781}
-  bola:
-    serializedVersion: 2
-    m_Bits: 1024
-  rangeDaCabeca: 0.52
-  colidiuComAbola: 0
-  pararDeColidir: 0
-  leafChanceSpawn: 0
+  lifeMax: 2
+  life: 2
+  dead: 0
+  hitPower: 1
+  hitSpeed: 1
+  hitBool: 1
+  hitBoolAux: 0
+  movementBool: 1
+  movementBooll: 0
+  movementVelocity: -1
+  movementVelocityMax: -1
+  rb: {fileID: 0}
+  rigAnime: {fileID: 0}
+--- !u!114 &653955481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2671626407565454216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0742971c9c22c54409560896216de1d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hud: {fileID: 0}
+  lifeBarPrefab: {fileID: 1649073032665256936, guid: 5cdd3970d528d19479580eff58f32dc8, type: 3}
+  lifeBarGameObject: {fileID: 0}
 --- !u!1 &2671626407637585573
 GameObject:
   m_ObjectHideFlags: 0
