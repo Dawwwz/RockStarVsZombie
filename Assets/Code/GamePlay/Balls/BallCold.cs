@@ -15,18 +15,18 @@ public class BallCold : Ball
     {
         if (collision.gameObject.CompareTag("inimigo"))
         {
-
-            gameObject.GetComponent<CircleCollider2D>().enabled = true;
-            if (podeDarDano && collision != null && collision.gameObject.GetComponent<Inimigo>().Get_Life() > 0)
+            if (collision.collider.name == "Cabeca")
             {
-
-                dmgHUD();
-                collision.gameObject.GetComponent<Inimigo>().Set_Damage(danoTacada);
-                explosive.gameObject.GetComponent<DestroyHUD3>().danoTacada = danoTacada;
-                collision.gameObject.GetComponent<Inimigo>().Set_Life_Bar_Update();
-                Instantiate(explosive, transform.position, Quaternion.identity);
-                
+                rockMode.Set_Active_RockMode();
+                rockMode.Set_Head_Shot_count();
+                rockMode.Set_Diminuir_Spawn_Bola();
             }
+            gameObject.GetComponent<CircleCollider2D>().enabled = true;
+            dmgHUD();
+            collision.gameObject.GetComponent<Inimigo>().Set_Damage(danoTacada);
+            explosive.gameObject.GetComponent<DestroyHUD3>().danoTacada = danoTacada;
+            collision.gameObject.GetComponent<Inimigo>().Set_Life_Bar_Update();
+            Instantiate(explosive, transform.position, Quaternion.identity);
         }
     
     }

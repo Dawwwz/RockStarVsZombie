@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
-    public static LevelManager levelManager;
+   
     [SerializeField] private LeafControler leafControler;
     [SerializeField] private Hud hud;
     public string scenaAtualString;
@@ -12,23 +12,13 @@ public class LevelManager : MonoBehaviour
     public int[] levelAtual = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
     public bool gameLose, gameWin, gameIsPlaying, gamePause;
     public float time;
-    // Start is called before the first frame update
-    void Awake()
-    {
-        if(levelManager == null)
-        {
-            levelManager = this;
-        }
-
-    }
     void Start()
     {
+        leafControler = FindObjectOfType<LeafControler>();
         hud = FindObjectOfType<Hud>();
-        scenaAtualString = SceneManager.GetActiveScene().name;
-
         for(int i = 0; i < levelAtual.Length; i++)
         {
-            if(SceneManager.GetActiveScene().name == "Teste" + i)
+            if(SceneManager.GetActiveScene().name == "Level" + i)
             {
                 scenaAtualInt = i;
                 scenaAtualString = SceneManager.GetActiveScene().name;
@@ -50,7 +40,7 @@ public class LevelManager : MonoBehaviour
     }
     public void LoseGame()
     {
-        if (levelManager.gameLose)
+        if (gameLose)
         {
             Time.timeScale = 0;
            // AudioManager.audioManager.guitarBGAS.volume = 0;
@@ -74,14 +64,14 @@ public class LevelManager : MonoBehaviour
     }
     void Win()
     {
-        if (levelManager.Get_Time() <= 0 && Hud.zombienaTela == 0)
+        if (Get_Time() <= 0 && Hud.zombienaTela == 0)
         {
             Set_Win_Game(true);
             
             GameObject[] verLeaf = GameObject.FindGameObjectsWithTag("leaf");
             if (verLeaf.Length == 0)
             {
-                if (PlayerPrefs.GetInt("Level2") == 1)
+                if (PlayerPrefs.GetInt("freelevel" + 2) == 1)
                 {
                     GameWin_LevelProgress();
                     hud.GameWin();
@@ -100,20 +90,17 @@ public class LevelManager : MonoBehaviour
     }
     public void GameWin_LevelProgress()
     {
-        if (levelManager.gameWin)
+        if (gameWin)
         {
-            foreach (LevelManeger.Level level in LevelManeger.instance.levelList)
+            for (int i = 0; i < levelAtual.Length; i++)
             {
-                if (level.levelTxt == levelManager.scenaAtualInt + 1)             /// GAME MANAGER SAVE THIS INFORMATION
-                {                                                                /// NÃO TEM INDEPENDENCIA POR CONTA DO LEVEL MANAGER
-                    level.freeLevel = true;
-                    PlayerPrefs.SetInt("freelevel" + level.levelTxt, 1);
+                if (levelAtual[i] == scenaAtualInt)
+                {
+                    PlayerPrefs.SetInt("freelevel" + (scenaAtualInt + 1), 1);
                 }
             }
-            //end
-            if (PlayerPrefs.GetInt("Teste" + levelManager.scenaAtualInt) == 0)
+            if (PlayerPrefs.GetInt("Level" + scenaAtualInt) == 0)
             {
-
                 leafControler.UpdateLeaf();
             }
         }

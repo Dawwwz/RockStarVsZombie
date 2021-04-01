@@ -11,21 +11,21 @@ public class BallExplosive : Ball
     {
         if (collision.gameObject.CompareTag("inimigo"))
         {
-
+            if (collision.collider.name == "Cabeca")
+            {
+                rockMode.Set_Active_RockMode();
+                rockMode.Set_Head_Shot_count();
+                rockMode.Set_Diminuir_Spawn_Bola();
+            }
             collision.gameObject.GetComponent<Inimigo>().Set_Velocity(false);
             gameObject.GetComponent<CircleCollider2D>().enabled = true;
-
-            // get > circle collider inimigo;
-            if (podeDarDano && collision != null)
-            {
                 dmgHUD();
                 collision.gameObject.GetComponent<Inimigo>().Set_Damage(danoTacada);
                 collision.gameObject.GetComponent<Inimigo>().Set_Life_Bar_Update();
                 explosion.gameObject.GetComponent<DestroyHUD3>().danoTacada = danoTacada;
                 Instantiate(explosion, transform.position, Quaternion.identity);
 
-            }
         }
     }
-  
-}
+} 
+

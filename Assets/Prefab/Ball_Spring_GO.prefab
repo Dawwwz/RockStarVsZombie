@@ -165,6 +165,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62aebf3112230464ab6ece9079445e99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnController: {fileID: 0}
+  hudd: {fileID: 0}
+  rockMode: {fileID: 0}
   hud: {fileID: 0}
   dmgPref: {fileID: 8140763095059474652, guid: 5f32ee7b158f5a64e9a195434c434842, type: 3}
   dmgTrue: {fileID: 0}
@@ -178,4 +181,4 @@ MonoBehaviour:
   morre: 1
   contagem: 0
   contagemMax: 0
-  podecontar: 0
+  podecontar: 1

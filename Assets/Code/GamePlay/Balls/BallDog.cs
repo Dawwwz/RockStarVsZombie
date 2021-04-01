@@ -14,6 +14,12 @@ public class BallDog : Ball
         {
             if (podeDarDano)
             {
+                if (collision.collider.name == "Cabeca")
+                {
+                    rockMode.Set_Active_RockMode();
+                    rockMode.Set_Head_Shot_count();
+                    rockMode.Set_Diminuir_Spawn_Bola();
+                }
                 dmgHUD();
                 collision.gameObject.GetComponent<Inimigo>().Set_Damage(danoTacada);
                 collision.gameObject.GetComponent<Inimigo>().Set_Life_Bar_Update();

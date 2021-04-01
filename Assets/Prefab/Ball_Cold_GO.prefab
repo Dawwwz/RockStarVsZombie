@@ -165,6 +165,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 652056a54639d7e45bd9e9f0e96f9068, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnController: {fileID: 0}
+  hudd: {fileID: 0}
+  rockMode: {fileID: 0}
   hud: {fileID: 0}
   dmgPref: {fileID: 8140763095059474652, guid: 5f32ee7b158f5a64e9a195434c434842, type: 3}
   dmgTrue: {fileID: 0}
@@ -172,7 +175,7 @@ MonoBehaviour:
   jaFuiAcertado: 0
   podeDarDano: 1
   frequenciaDmg: 2
-  deathTime: 0.2
+  deathTime: 0
   danoTacada: 0
   danotacaday: 0
   explosive: {fileID: 1633912341791342905, guid: add7b177548f14e4d92889d2911793de, type: 3}

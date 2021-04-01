@@ -29,10 +29,13 @@ public class Hud : MonoBehaviour
     [SerializeField] private Image arrowBGs;
 
     public static int zombienaTela; /// otimizar 
-
-    void Start()
+    private void Awake()
     {
         arrowBG = GameObject.Find("Img_ArrowBG").GetComponent<Image>();
+    }
+    void Start()
+    {
+        
         if (instance == null)
         {
             instance = this;
@@ -71,17 +74,17 @@ public class Hud : MonoBehaviour
     public void OpenMenu()
     {
         Time.timeScale = 1;
-        AudioManager.audioManager.guitarBGAS.volume = 0;
-        AudioManager.audioManager.SoundBG(5);
+       // AudioManager.audioManager.guitarBGAS.volume = 0;
+       // AudioManager.audioManager.SoundBG(5);
         losePanel.SetActive(false);
         winPanel.SetActive(false);
         pausePanel.SetActive(false);
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("UI_Menu");
     }
-    public void RestartLevel(int scene)
+    public void RestartLevel()
     {
         Time.timeScale = 1;
-        AudioManager.audioManager.guitarBGAS.volume = 0;
+        //AudioManager.audioManager.guitarBGAS.volume = 0;
         losePanel.SetActive(false);
         winPanel.SetActive(false);
         pausePanel.SetActive(false);
@@ -91,7 +94,7 @@ public class Hud : MonoBehaviour
     {
         if(PlayerPrefs.GetInt("freelevel"+ levelManager.scenaAtualInt+1) == 1)
         {
-            AudioManager.audioManager.guitarBGAS.volume = 0;
+           // AudioManager.audioManager.guitarBGAS.volume = 0;
             Time.timeScale = 1;
             losePanel.SetActive(false);
             winPanel.SetActive(false);

@@ -41,11 +41,11 @@ public class Pet : Character
             Hud.instance.AttHuds();
         }
 
-        if (collision.gameObject.CompareTag("leaf"))
+        if (collision.gameObject.CompareTag("leaf")) // achhar outra forma de transportar a folha
         {
             Destroy(collision.gameObject.GetComponent<Rigidbody2D>());
             collision.gameObject.transform.SetParent(transform, true);
-            collision.transform.position = new Vector2(transform.position.x , transform.position.y + 1.2f) ;
+            collision.transform.position = new Vector2(transform.position.x-0.5f, transform.position.y + 3f);
             leafControler.Set_Ho_Get_leaf(false,true,false,false);           
             collision.gameObject.GetComponent<BoxCollider2D>().enabled = false;
         }

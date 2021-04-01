@@ -35,7 +35,7 @@ public class LeafControler : MonoBehaviour
     public void Set_Leaf_Spawn()
     {
         // systema leaf
-        if (PlayerPrefs.GetInt("Level" + LevelManager.levelManager.scenaAtualInt) == 0 && leafVoid && Get_Leaf_can_Spawn())
+        if (PlayerPrefs.GetInt("Level" + levelManager.scenaAtualInt) == 0 && leafVoid && Get_Leaf_can_Spawn())
         {         
             leafChanceSpawn = Random.Range(0, 2);
             if(leafChanceSpawn == 1)
@@ -87,7 +87,8 @@ public class LeafControler : MonoBehaviour
         {
             for(int i = 0; i < levelManager.levelAtual.Length; i++)
             {
-                if(leafLevel == "Level"+i)
+            
+                if (leafLevel == "Level"+i)
                 {
                     PlayerPrefs.SetInt("Level"+i, 1);
                 }

@@ -446,7 +446,7 @@ GameObject:
   - component: {fileID: 2671626408068732227}
   - component: {fileID: 2671626408068732228}
   m_Layer: 9
-  m_Name: "Cabe\xE7a"
+  m_Name: Cabeca
   m_TagString: inimigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

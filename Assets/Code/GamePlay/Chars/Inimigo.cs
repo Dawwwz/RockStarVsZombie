@@ -34,7 +34,6 @@ public class Inimigo : Character
             if (!dead)
             {
                 // GameManager.instanceGameManager.zombiesAmount++; // SPAWN CONTROLER 
-                Debug.Log("fiiim" + PlayerPrefs.GetInt("Level" + levelManager.scenaAtualInt));
                 if (
                     leafControler.Get_Leaf_can_Spawn() && 
                     PlayerPrefs.GetInt("Level" + levelManager.scenaAtualInt) == 0 

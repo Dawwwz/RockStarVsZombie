@@ -1178,8 +1178,8 @@ MonoBehaviour:
   - {fileID: 1336293072889893417}
   - {fileID: 1336293071853445513}
   m_Bounds:
-    m_Center: {x: 0.012147218, y: 0.17661852, z: 0}
-    m_Extent: {x: 0.32146272, y: 0.5765251, z: 0}
+    m_Center: {x: 0.012147158, y: 0.17661846, z: 0}
+    m_Extent: {x: 0.32146254, y: 0.57652503, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!95 &1336293073527290104
@@ -1240,7 +1240,7 @@ MonoBehaviour:
   segurandoclick: 0
   solteiOclick: 0
   podeMultiplicar: 1
-  guitarDouble: 1
+  guitarDouble: 0
   guitarDmg: 0
   guitarNotes: 0
   ballSpawncd: 0
@@ -1364,6 +1364,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cb6f7b374b4db14cb736d804b6417e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hud: {fileID: 0}
   rotateVelocity: 100
   rotateVelocitySave: 100
   arrowZRotate: 0

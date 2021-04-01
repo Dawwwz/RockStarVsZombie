@@ -25,40 +25,29 @@ public class BallSpring : Ball
     {
         if (collision.gameObject.tag == "inimigo")
         {
-
-            if (podeDarDano)
-            {
-                if (collision != null)
-                {
-                    
+                    if (collision.collider.name == "Cabeca")
+                    {
+                        rockMode.Set_Active_RockMode();
+                        rockMode.Set_Head_Shot_count();
+                        rockMode.Set_Diminuir_Spawn_Bola();
+                    }
                     dmgHUD();
                     if (danoTacada <= 0.001)
                     {
                         Destroy(gameObject);
                     }
-                    if (collision.gameObject.GetComponent<Inimigo>().Get_Life() > 0)
-                    {
                         podecontar = true; ;
                         contagem++;
                         collision.gameObject.GetComponent<Inimigo>().Set_Damage(danoTacada);
                         collision.gameObject.GetComponent<Inimigo>().Set_Life_Bar_Update();
-                    }
-                    else
-                    {
-                        collision = null;
-                    }
-                }
-            }
+                
+            
         }
     }
     public void OnCollisionStay2D(Collision2D collision)
-    {
-            
+    {    
         if (collision.gameObject.tag == "inimigo")
         {
-
-            if (podeDarDano && collision != null)
-            {
                     dmgHUD();
                     collision.gameObject.GetComponent<Inimigo>().Set_Damage(danoTacada);
                     collision.gameObject.GetComponent<Inimigo>().Set_Life_Bar_Update();
@@ -66,20 +55,13 @@ public class BallSpring : Ball
                     {
                         Destroy(gameObject);
                     }
-                       
-                    else
-                    {
-                        collision = null;
-                    }
-               
-            }
         }
     }
     IEnumerator morrer()
     {
         morre = false;
         contagemMax = contagem;
-        yield return new WaitForSeconds(12);
+        yield return new WaitForSeconds(7);
         if(contagem == contagemMax)
         {
             Destroy(gameObject);

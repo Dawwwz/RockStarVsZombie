@@ -32,6 +32,7 @@ public class SpawnController : MonoBehaviour
     [SerializeField] private float timer_Max;
     [SerializeField] private float timer_Max_Save;
     [SerializeField] private bool timer_Bool;
+    [SerializeField] private int go_Select1;
 
     // Start is called before the first frame update
     void Start()
@@ -58,7 +59,7 @@ public class SpawnController : MonoBehaviour
                 Instantiate(GO[PlayerPrefs.GetInt("BallSelect"+go_Select)], spawn_Position, Quaternion.identity);
                 return;
             }
-            Instantiate(GO[go_Select], spawn_Position, Quaternion.identity);
+            Instantiate(GO[Random.Range(go_Select, go_Select1)], spawn_Position, Quaternion.identity);
         }
     }
     public void Set_Select_GameObjectss(GameObject[] GO, int go_Select, Vector3 spawn_Position, int select_Amount_GO = 1, bool playerPrefs = false)
@@ -78,7 +79,7 @@ public class SpawnController : MonoBehaviour
         if (spawn_CanBe_Spawned && spawn_CanBe_Method_Standart_Cycles)
         {
 
-            if (levelManager.Get_Time() > 0)
+            if (levelManager.Get_Time() > 0 )
              {
 
                 Set_Select_GameObject(spawn_GO, spawn_GO_int_TypeSelect, spawn_Transform.position,spawn_Amount_Index);
@@ -87,7 +88,6 @@ public class SpawnController : MonoBehaviour
              }
         }
     }
-
     public void Set_Spawn_GameObjects_In_hud_Time_Counter()
     {
         if (spawn_CanBe_Spawned && spawn_CanBe_Method_Timer_Counter)
@@ -133,7 +133,6 @@ public class SpawnController : MonoBehaviour
     {
         if(timer_Max == timer_Max_Save)
         {
-            Debug.Log("diminuiu");
             timer_Max -= 2;
             return;
         }
@@ -147,5 +146,18 @@ public class SpawnController : MonoBehaviour
     {
         timer_Max = timer_Max_Save;
     }
+    public void Set_Trocar_Bola()
+    {
+        if (spawn_GO_int_TypeSelect < 4)
+        {
+            spawn_GO_int_TypeSelect++;
+            go_Select1++;
+        }
+        else if (spawn_GO_int_TypeSelect == 4)
+        {
+            spawn_GO_int_TypeSelect = 0;
+            go_Select1 = 0;
+        }
 
+    }
 }

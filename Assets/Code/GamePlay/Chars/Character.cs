@@ -71,9 +71,9 @@ public class Character : MonoBehaviour
         if (movementBool && !dead)
         {
             rb.velocity = new Vector3(movementVelocity, rb.velocity.y);
-            if (transform.position.y < -4)
+            if (transform.position.y < -3)
             {
-                transform.position = new Vector2(transform.position.x, -3);
+                transform.position = new Vector2(transform.position.x, -2);
                 return;
             }
         }

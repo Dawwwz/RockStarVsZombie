@@ -40,20 +40,19 @@ public class LevelManeger : MonoBehaviour
             txtBtnLevel.text = level.levelTxt.ToString();
             GameObject btnLevelNew = Instantiate(btnLevel) as GameObject;
             int a = level.levelTxt;
-            ++a;
-            
-            if(PlayerPrefs.GetInt("freelevel"+level.levelTxt)== 1)
+           
+            if(PlayerPrefs.GetInt("freelevel"+level.levelTxt) == 1)
             {
                 level.freeLevel = true;
+                Debug.Log("Liberando o freelevel >" + a +"ou"+level.levelTxt);
             }
             if (PlayerPrefs.GetInt("Level"+a) == 1)
             {
-           
+                Debug.Log("Liberando a folha >"+a);
                      Image leaff =    btnLevelNew.transform.GetChild(0).GetComponent<Image>();
                      leaff.color = new Color(leaff.color.r, leaff.color.b, leaff.color.g, 255);
        
             }
-            a--;
             btnLevelNew.GetComponent<Button>().interactable = level.freeLevel;
             btnLevelNew.GetComponent<Button>().onClick.AddListener(() => LevelSelect("Level"+level.levelTxt,level.levelTxt));
             btnLevelNew.transform.SetParent(btnLocal, false);
@@ -65,10 +64,6 @@ public class LevelManeger : MonoBehaviour
     {
         
         SceneManager.LoadScene(level);
-        LevelManager.levelManager.scenaAtualString = level;
-        levelN++;
-        LevelManager.levelManager.scenaAtualInt = levelN;
-
     }
    
 }
