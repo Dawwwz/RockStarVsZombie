@@ -44,11 +44,9 @@ public class LevelManeger : MonoBehaviour
             if(PlayerPrefs.GetInt("freelevel"+level.levelTxt) == 1)
             {
                 level.freeLevel = true;
-                Debug.Log("Liberando o freelevel >" + a +"ou"+level.levelTxt);
             }
             if (PlayerPrefs.GetInt("Level"+a) == 1)
             {
-                Debug.Log("Liberando a folha >"+a);
                      Image leaff =    btnLevelNew.transform.GetChild(0).GetComponent<Image>();
                      leaff.color = new Color(leaff.color.r, leaff.color.b, leaff.color.g, 255);
        

@@ -17,6 +17,7 @@ public class DestroyHUD3 : MonoBehaviour
             {
                 zombie.Add(collision.transform.root.gameObject);
                 collision.transform.root.GetComponent<Inimigo>().Set_Velocity(false);
+              
                 foreach (GameObject zomb in zombie)
                     {
                         if (zomb == null)
@@ -28,11 +29,12 @@ public class DestroyHUD3 : MonoBehaviour
                         {
                             if (GetComponent<PointEffector2D>() == null)
                             {
-                                zomb.GetComponent<Inimigo>().Set_Velocity(false);
-                                zomb.GetComponent<Inimigo>().Set_Damage(danoTacada / 4);
+                           
+                            zomb.GetComponent<Inimigo>().Set_Damage(danoTacada / 4);
                             }
                             else
                             {
+                            collision.transform.root.GetComponent<Inimigo>().VelRechargeTimes(0.7f);
                             zomb.GetComponent<Inimigo>().Set_Damage(danoTacada / 2.5f);
                             }
                             if (zomb.GetComponent<Inimigo>().Get_Life_Bar_GO() != null)
@@ -44,6 +46,7 @@ public class DestroyHUD3 : MonoBehaviour
             }
                 if (GetComponent<PointEffector2D>() != null)
                 {
+                
                 GetComponent<PointEffector2D>().enabled = true;
                 }
                 GetComponent<CircleCollider2D>().enabled = false;

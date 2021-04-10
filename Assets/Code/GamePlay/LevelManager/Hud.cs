@@ -55,7 +55,7 @@ public class Hud : MonoBehaviour
     {
       ///  coinTxt.text = GameManager.instanceGameManager.coinEphemeral.ToString();
         levelInfo.text = levelManager.scenaAtualString;
-        Rockmode.text = "Hits" + rockMode.Get_Head_Shot_count();
+        //Rockmode.text = "Hits" + rockMode.Get_Head_Shot_count();
         timerTxt.text = levelManager.Get_Time().ToString();
     }
     public void GameWin()

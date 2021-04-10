@@ -62,6 +62,7 @@ public class StoreSup : MonoBehaviour
                         LojaManager.instance.UpdateBtnTxt(ss.ballID, "usando");
                         
                         PlayerPrefs.SetInt("BallChosed", ss.ballID);
+                        Debug.Log(PlayerPrefs.GetInt("BallChosed") + "salvo");
                     }
                     if (produto.ballID == ss.ballID && produto.ballbuy && produto.ballID != ballID)
                     {

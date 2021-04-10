@@ -37,17 +37,30 @@ public class SpawnController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if(gameObject.name == "Spawn_Controller_Balls")
+        {
+            spawn_GO_int_TypeSelect = PlayerPrefs.GetInt("BallChosed");
+            go_Select1 = PlayerPrefs.GetInt("BallChosed");
+        }
+
+        
         levelManager = FindObjectOfType<LevelManager>();
         // como as coisas devem começar porq sim !!!
         spawn_CanBe_Spawned = true;
         spawn_CanBe_Method_Standart_Cycles = true;
         timer_Bool = false;
         timer_Max_Save = timer_Max;
+     
+
     }
     private void FixedUpdate()
     {
         Set_Spawn_GameObjects_In_Standard_Cycles();
-        Set_Spawn_GameObjects_In_hud_Time_Counter();
+        if (gameObject.name == "Spawn_Controller_Enemy")
+        {
+             Set_Spawn_GameObjects_In_hud_Time_Counter();
+        }
+       
         Set_Timer();
     }
     public void Set_Select_GameObject(GameObject[] GO, int go_Select, Vector3 spawn_Position,int select_Amount_GO = 1,bool playerPrefs = false)

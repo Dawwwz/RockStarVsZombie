@@ -48,10 +48,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelManager: {fileID: 0}
   spawn_GO:
+  - {fileID: 5173178571875108674, guid: 5151ac1d623398845b6326310b3f4206, type: 3}
+  - {fileID: 5173178571875108674, guid: 952c019d51bc16643a7e000c6542400f, type: 3}
   - {fileID: 5173178571875108674, guid: 96eb7f98693657649bb68cc9ed243ce8, type: 3}
-  - {fileID: 5173178571875108674, guid: 5151ac1d623398845b6326310b3f4206, type: 3}
-  - {fileID: 5173178571875108674, guid: 5151ac1d623398845b6326310b3f4206, type: 3}
   - {fileID: 5173178571875108674, guid: 8f31516bed81ee14f9be3de792476dcf, type: 3}
+  - {fileID: 5173178571875108674, guid: 76901110600d7e249b7ec185f317f442, type: 3}
   spawn_Transform: {fileID: 6159193926747348057}
   spawn_GO_int_TypeSelect: 0
   spawn_Amount:

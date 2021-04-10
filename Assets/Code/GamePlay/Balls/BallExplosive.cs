@@ -19,10 +19,10 @@ public class BallExplosive : Ball
             }
             collision.gameObject.GetComponent<Inimigo>().Set_Velocity(false);
             gameObject.GetComponent<CircleCollider2D>().enabled = true;
+                explosion.gameObject.GetComponent<DestroyHUD3>().danoTacada = danoTacada;
                 dmgHUD();
                 collision.gameObject.GetComponent<Inimigo>().Set_Damage(danoTacada);
                 collision.gameObject.GetComponent<Inimigo>().Set_Life_Bar_Update();
-                explosion.gameObject.GetComponent<DestroyHUD3>().danoTacada = danoTacada;
                 Instantiate(explosion, transform.position, Quaternion.identity);
 
         }

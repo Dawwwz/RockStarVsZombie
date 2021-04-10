@@ -115,4 +115,14 @@ public class Character : MonoBehaviour
         yield return new WaitForSeconds(timer);
         hitBool = true;
     }
+   public IEnumerator VelRechargeTime(float timer)
+    {
+        movementBool = false;
+        yield return new WaitForSeconds(timer);
+        movementBool = true;
+    }
+    public void VelRechargeTimes(float a)
+    {
+        StartCoroutine(VelRechargeTime(a));
+    }
 }

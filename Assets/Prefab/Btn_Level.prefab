@@ -61,7 +61,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.18867922, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -216,6 +216,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Image
       objectReference: {fileID: 0}
+    - target: {fileID: 7948354545326104399, guid: 468b6893260ce8044bfd11da258f71ca, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7948354545326104399, guid: 468b6893260ce8044bfd11da258f71ca, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7948354545326104399, guid: 468b6893260ce8044bfd11da258f71ca, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7948354545326104399, guid: 468b6893260ce8044bfd11da258f71ca, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 355584b038dd3c548aa6b24597fa6c52, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 468b6893260ce8044bfd11da258f71ca, type: 3}
 --- !u!224 &3174104449507645391 stripped
@@ -317,6 +333,18 @@ PrefabInstance:
     - target: {fileID: 4239782998726361329, guid: 5d8ed2ad772654f4183bc30b815519ab, type: 3}
       propertyPath: m_Name
       value: Txt_Level
+      objectReference: {fileID: 0}
+    - target: {fileID: 4239782998726361335, guid: 5d8ed2ad772654f4183bc30b815519ab, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4239782998726361335, guid: 5d8ed2ad772654f4183bc30b815519ab, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4239782998726361335, guid: 5d8ed2ad772654f4183bc30b815519ab, type: 3}
+      propertyPath: m_Color.b
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d8ed2ad772654f4183bc30b815519ab, type: 3}

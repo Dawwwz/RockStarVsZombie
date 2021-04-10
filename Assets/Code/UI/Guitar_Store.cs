@@ -10,6 +10,7 @@ public class Guitar_Store : MonoBehaviour
     public Text guitar_Stats_Txt;
     public Image guitar_Img;
     public GameObject guitar_Btn;
+    public Text descricao;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,10 +27,13 @@ public class Guitar_Store : MonoBehaviour
     {
         foreach(LojaManager.Guitar guitarStats in LojaManager.instance.guitar_Attribute_List)
         {
+           
             if (guitar_ID == guitarStats.guitarID && GameManager.instanceGameManager.coin >= guitarStats.guitarPrice && !guitarStats.guitarBuy)
             {
+                Debug.Log("oi");
                 guitarStats.guitarBuy = true;
-                PlayerPrefs.SetInt("GuitarBuy" + guitar_ID, 1);
+                PlayerPrefs.SetInt("GuitarBuy" + guitarStats.guitarID, 1);
+                Debug.Log( guitarStats.guitarID);
                 GameManager.instanceGameManager.CoinDecrease(guitarStats.guitarPrice);
                 GameManager.instanceGameManager.CoinSave();
                 UpdateBtn();
@@ -37,6 +41,7 @@ public class Guitar_Store : MonoBehaviour
             } 
             else if(guitar_ID == guitarStats.guitarID && guitarStats.guitarBuy)
             {
+                PlayerPrefs.SetInt("GuitarBuy" + guitarStats.guitarID, 1);
                 UpdateBtn();
             }
            
@@ -63,12 +68,13 @@ public class Guitar_Store : MonoBehaviour
                     if(guitar_GO_Componets.guitar_ID == guitar_Atrib_Original.guitarID && guitar_Atrib_Original.guitarBuy && guitar_GO_Componets.guitar_ID != guitar_ID)
                     {
                         PlayerPrefs.SetString("GuitarBtnState" + guitar_GO_Componets.guitar_ID, "Use");
+                        guitar_GO_Componets.guitar_Img.color = Color.white;
                         guitar_GO_Componets.guitar_Stats_Txt.text = "Use";
                       
                     }
                     if(guitar_GO_Componets.guitar_ID == guitar_Atrib_Original.guitarID && guitar_Atrib_Original.guitarBuy && guitar_GO_Componets.guitar_ID == guitar_ID)
                     {
-                        
+                        guitar_GO_Componets.guitar_Img.color = Color.white;
                         guitar_GO_Componets.guitar_Stats_Txt.text = "Usando";
                         PlayerPrefs.SetString("GuitarBtnState"+guitar_GO_Componets.guitar_ID, "usando");
                         PlayerPrefs.SetString("GuitarUsando", guitar_Atrib_Original.guitarSpriteName);

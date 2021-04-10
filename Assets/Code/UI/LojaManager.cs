@@ -48,6 +48,7 @@ public class LojaManager : MonoBehaviour
         public string guitarName;
         public string guitarBtnTxt;
         public bool guitarBuy;
+        public string descricao;
     }
 
   
@@ -60,16 +61,12 @@ public class LojaManager : MonoBehaviour
         {
             instance = this;
         }
-       if( !Resources.Load<Sprite>("Sprites/" + "explosions"))
-            {
-            PlayerPrefs.DeleteAll();
-            }
     }
     void Start()
     {
         CreateGuitarStore();
         CriandoLoja();
-        
+
     }
 
     //
@@ -100,16 +97,16 @@ public class LojaManager : MonoBehaviour
             if (produto.ballbuy == true)
             {
                
-                atribProdutos.ballSprite.sprite = Resources.Load<Sprite> ("Sprites/"+produto.ballSpriteName);
+                atribProdutos.ballSprite.sprite = Resources.Load<Sprite> ("Sprites/"+produto.ballSpriteName) ;
+                atribProdutos.ballSprite.color = Color.white;
                 atribProdutos.ballPriceTxt.text = "Comprado";
-                
-
+               
             }
             else
             {
-                
-                
-                atribProdutos.ballSprite.sprite = Resources.Load<Sprite> ("Sprites/"+produto.ballSpriteName+"_cinza");
+      
+                atribProdutos.ballSprite.sprite = Resources.Load<Sprite> ("Sprites/"+produto.ballSpriteName);
+                atribProdutos.ballSprite.color = Color.black;
             }
            
             //INFOS DA PREFAB CRIADA
@@ -136,7 +133,8 @@ public class LojaManager : MonoBehaviour
                     {
                        
                         infos.ballSprite.sprite = Resources.Load<Sprite> ("Sprites/"+produto.ballSpriteName);
-                        infos.ballPriceTxt.text = "comprado";
+                            infos.ballSprite.color = Color.white;
+                            infos.ballPriceTxt.text = "comprado";
                             ProdutoSave(infos.ballID);
 
 
@@ -144,8 +142,9 @@ public class LojaManager : MonoBehaviour
                     else
                     {
                         
-                        infos.ballSprite.sprite = Resources.Load<Sprite> ("Sprites/"+produto.ballSpriteName+"_cinza");
-                    }
+                        infos.ballSprite.sprite = Resources.Load<Sprite> ("Sprites/"+produto.ballSpriteName);
+                            infos.ballSprite.color = Color.black;
+                        }
                     }
                 }
             }
@@ -203,24 +202,31 @@ public class LojaManager : MonoBehaviour
             guitar_Store.guitar_Name.text = guitar_Attribute.guitarSpriteName;
             guitar_Store.guitar_Price.text = guitar_Attribute.guitarPrice.ToString();
             guitar_GO_List.Add(guitar_GO);
+                
             if (PlayerPrefs.GetInt("GuitarBuy"+guitar_Attribute.guitarID) == 1)
             {
+                Debug.Log((PlayerPrefs.GetInt("GuitarBuy" + guitar_Attribute.guitarID)));
+                guitar_Store.guitar_Img.sprite = Resources.Load<Sprite>("Sprites/" + guitar_Attribute.guitarSpriteName);
+                guitar_Store.guitar_Img.color = Color.white;
                 guitar_Attribute.guitarBuy = true;
                 guitar_Store.guitar_Price.text = "Comprado";
             }
-            if(PlayerPrefs.HasKey("GuitarBtnState"+ guitar_Attribute.guitarID) && guitar_Attribute.guitarBuy)
+            if (PlayerPrefs.HasKey("GuitarBtnState" + guitar_Attribute.guitarID) && guitar_Attribute.guitarBuy)
             {
+
+                guitar_Store.guitar_Img.sprite = Resources.Load<Sprite>("Sprites/" + guitar_Attribute.guitarSpriteName);
+                guitar_Store.guitar_Img.color = Color.white;
                 guitar_Store.guitar_Stats_Txt.text = PlayerPrefs.GetString("GuitarBtnState" + guitar_Attribute.guitarID);
+            }
+            else if (!guitar_Attribute.guitarBuy)
+            {
+               
+                guitar_Store.guitar_Img.sprite = Resources.Load<Sprite>("Sprites/" + guitar_Attribute.guitarSpriteName);
+                guitar_Store.guitar_Img.color = Color.black;
             }
             
 
 
         }
-    }
-
-    //
-    // FOOD STORE
-    //
-
-   
+    } 
 }
