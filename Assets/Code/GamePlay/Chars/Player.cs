@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 public class Player : Character
 {
-    public static float ballPowerImpulse = 1; // vai virar um player prefs
+    
     [Header("HitAserAjustado")]
     [SerializeField] private float ballPowerImpulseMax;
 
@@ -25,43 +25,51 @@ public class Player : Character
     [Header("ballSpawnCd")]
     [SerializeField] private float ballSpawncd;
 
+    [SerializeField] private SpriteRenderer getSprite;
+    [SerializeField] private Sprite[] sprites;
     [Header("Pegando_Referencia_Das_Bolas_Ao_Colidir")]
     [SerializeField] private List<GameObject> listPlayer = new List<GameObject>();
 
 
     void Start()
     {
-        hud.SetTxtBallPOwer(ballPowerImpulse.ToString());
+        hud.SetTxtBallPOwer(hitPower.ToString());
         rigAnime = GetComponent<Animator>();
         RigAnimation(true, false, false, false, false); // COMEÇA COM ANIMAÇÃO IDDLE
         //ballPowerImpulse = GameManager.instanceGameManager.power; //RECEBE A FORÇA DO HIT
-        ballPowerImpulseMax = ballPowerImpulse; // SALVA A FORÇA DO HIT PARA VOLTAR DEPOIS
         switch (PlayerPrefs.GetString("GuitarUsando")) //SYSTEMA PARA SELECIONAR GUITARRA
         {
-            case "base":
+            case "baseguitar":
                 Set_Guitar_In_Use(false, false, false);
+                getSprite.sprite = sprites[0];
+
                 break;
             case "dmg":
                 Set_Guitar_In_Use(true, false, false);
+                getSprite.sprite = sprites[1];
+
                 if (guitarDmg) // DOBRA O DANO DO HIT (CASO A GUITARRA DE DOBRAR O DANO ESTEJA SELECIONADA)         
                 {
-                    ballPowerImpulse *= 2;
+                    hitPower *= 2;
                 }
                 break;
             case "double":
                 Set_Guitar_In_Use(false, true, false);
+                getSprite.sprite = sprites[2];
                 break;
             case "note":
                 Set_Guitar_In_Use(false, false, true);
+                getSprite.sprite = sprites[3];
                 break;
 
         }
+        ballPowerImpulseMax = hitPower; // SALVA A FORÇA DO HIT PARA VOLTAR DEPOIS
     }
     private void Update()
     {
         SetInputs();
         //Contador();
-        hud.SetTxtBallPOwer(ballPowerImpulse.ToString());
+       
     }
     public void SetInputs()
     {
@@ -71,18 +79,19 @@ public class Player : Character
 
             hitTarget.SetSaveRotate();
             hitTarget.SetStopRotate();
-            hud.SetTxtBallPOwer(ballPowerImpulse.ToString());
+            hud.SetTxtBallPOwer(hitPower.ToString());
             particle.trailrender.emitting = true;
             cliquei = true;
         }
         if (Input.GetMouseButton(0) && hitBool && cliquei && EventSystem.current.currentSelectedGameObject == null)
         {
+            hud.SetTxtBallPOwer(hitPower.ToString());
             segurandoclick = true;
             RigAnimation(false, false, false, true, false);
-            if (ballPowerImpulse <= 1.6 * ballPowerImpulseMax)
+            if (hitPower <= 1.6 * ballPowerImpulseMax)
             {
-                ballPowerImpulse += ballPowerImpulse / 10 * Time.deltaTime;
-                hud.SetTxtBallPOwer(ballPowerImpulse.ToString());
+                hitPower += hitPower / 10 * Time.deltaTime;
+                hud.SetTxtBallPOwer(hitPower.ToString());
             }
         }
         if (Input.GetMouseButtonUp(0) && hitBool && segurandoclick )
@@ -101,6 +110,7 @@ public class Player : Character
             Time.timeScale = 0;
             levelManager.Set_Lose_Game(true);
             levelManager.LoseGame();
+            
             // GameManager.instanceGameManager.gameLose = true;
         }
     }
@@ -149,7 +159,7 @@ public class Player : Character
                 if (!player.GetComponent<Ball>().jaFuiAcertado || player.GetComponent<Rigidbody2D>().velocity.x < 0)
                 {
 
-                    player.GetComponent<Ball>().jaFuiAcertado = true;
+                    player.GetComponent<Ball>().sochama();
                     player.GetComponent<Rigidbody2D>().AddForce(new Vector2(hitTarget.GetAtributeX(), -hitTarget.GetAtributeY() + 0.19f), ForceMode2D.Force);
                     // AudioManager.audioManager.SoundEffect(0);
                 }
@@ -168,8 +178,8 @@ public class Player : Character
     {
         RigAnimation(true, false, false, false, false);
         hitTarget.SetPlayRotate();
-        ballPowerImpulse = ballPowerImpulseMax;
-        hud.SetTxtBallPOwer(ballPowerImpulse.ToString());
+        hitPower = ballPowerImpulseMax;
+        hud.SetTxtBallPOwer(hitPower.ToString());
         particle.trailrender.emitting = false;
         podeMultiplicar = true;
         solteiOclick = false;

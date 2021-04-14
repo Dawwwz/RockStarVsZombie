@@ -5,7 +5,7 @@ using UnityEngine;
 public class RockMode : MonoBehaviour
 {
     [SerializeField] private Player player;
-
+    [SerializeField] private Hud hud;
     [Header("RockMode Timer")]
     [SerializeField] private float timer ;
     [SerializeField] private float timer_Max;
@@ -21,6 +21,7 @@ public class RockMode : MonoBehaviour
     void Start()
     {
         player = FindObjectOfType<Player>();
+        hud = FindObjectOfType<Hud>();
     }
 
     // Update is called once per frame
@@ -65,9 +66,11 @@ public class RockMode : MonoBehaviour
     public void Set_Head_Shot_count()
     {
         head_Shot_Count += 1;
+        hud.Set_rockMOdeUI(head_Shot_Count);
     }
     public void Set_Head_Shot_count_O()
     {
+        hud.Set_rockMOdeUIF();
         head_Shot_Count = 0;
         head_Shot_Count_Save = 0;
     }

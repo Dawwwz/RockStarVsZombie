@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1652472704486883699}
-  - component: {fileID: 534207413730371549}
+  - component: {fileID: 8981942755273289495}
   m_Layer: 0
   m_Name: Spawn_Controller_Balls
   m_TagString: Untagged
@@ -34,7 +34,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &534207413730371549
+--- !u!114 &8981942755273289495
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43,10 +43,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1652472704486883696}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ca1fc629b9277c46bff5b6a807fc1fc, type: 3}
+  m_Script: {fileID: 11500000, guid: 298b86f9bfba12a459bff32393ab7d5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   levelManager: {fileID: 0}
+  hud: {fileID: 0}
   spawn_GO:
   - {fileID: 5173178571875108674, guid: 5151ac1d623398845b6326310b3f4206, type: 3}
   - {fileID: 5173178571875108674, guid: 952c019d51bc16643a7e000c6542400f, type: 3}
@@ -55,22 +56,16 @@ MonoBehaviour:
   - {fileID: 5173178571875108674, guid: 76901110600d7e249b7ec185f317f442, type: 3}
   spawn_Transform: {fileID: 6159193926747348057}
   spawn_GO_int_TypeSelect: 0
+  spawn_GO_int_TypeSelectt: 0
   spawn_Amount:
   - 1
   spawn_Amount_Index: 0
   spawn_CanBe_Spawned: 1
   spawn_CanBe_Method_Standart_Cycles: 1
-  spawn_CanBe_PlayerPrefs: 0
-  spawn_CanBe_Method_Timer_Counter: 0
-  hud_Time_Counter: 
-  hud_Time_Counter_Index: 0
-  spawn_GO_int_TypeSelect_Random_Range: 
-  spawn_GO_int_TypeSelect_Random_Range_index: 0
-  timer: 1
+  timer: 6
   timer_Max: 6
-  timer_Max_Save: 0
+  timer_Max_Save: 6
   timer_Bool: 0
-  go_Select1: 0
 --- !u!1 &6159193926747348058
 GameObject:
   m_ObjectHideFlags: 0

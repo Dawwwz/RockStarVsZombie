@@ -99,7 +99,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5398121593503924174}
-  - component: {fileID: 6588444208516143456}
+  - component: {fileID: 949071736899762867}
   m_Layer: 0
   m_Name: Spawn_Controller_Enemy
   m_TagString: Untagged
@@ -124,7 +124,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6588444208516143456
+--- !u!114 &949071736899762867
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -133,30 +133,38 @@ MonoBehaviour:
   m_GameObject: {fileID: 5398121593503924173}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ca1fc629b9277c46bff5b6a807fc1fc, type: 3}
+  m_Script: {fileID: 11500000, guid: 785a3337d0a09f24191d6b8d8c309719, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   levelManager: {fileID: 0}
+  hud: {fileID: 0}
   spawn_GO:
-  - {fileID: 4504497657893403596, guid: 604b3d5097fc6d641bc7fafc7b0bbb59, type: 3}
-  - {fileID: 395442025020304831, guid: 686dcd6d699ed83458bab1349b440a9b, type: 3}
   - {fileID: 8919781676040293161, guid: 0f42e82bc1136254e87b5ffd859e9389, type: 3}
+  - {fileID: 4504497657893403596, guid: 604b3d5097fc6d641bc7fafc7b0bbb59, type: 3}
+  - {fileID: 727050540728461898, guid: 681d69433fbe88145a7d75c1ae2aecca, type: 3}
   - {fileID: 2671626407565454216, guid: 177292490fd70114b9cf37986bf9eab6, type: 3}
+  - {fileID: 395442025020304831, guid: 686dcd6d699ed83458bab1349b440a9b, type: 3}
   spawn_Transform: {fileID: 684234779652634705}
   spawn_GO_int_TypeSelect: 0
+  spawn_GO_int_TypeSelectt: 0
   spawn_Amount:
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
   - 1
   spawn_Amount_Index: 0
   spawn_CanBe_Spawned: 1
   spawn_CanBe_Method_Standart_Cycles: 1
-  spawn_CanBe_PlayerPrefs: 0
-  spawn_CanBe_Method_Timer_Counter: 0
-  hud_Time_Counter: 19000000140000000000000000000000000000000000000000000000000000000000000000000000
-  hud_Time_Counter_Index: 0
-  spawn_GO_int_TypeSelect_Random_Range: 03000000010000000200000000000000000000000000000000000000000000000000000000000000
-  spawn_GO_int_TypeSelect_Random_Range_index: 0
-  timer: 6
-  timer_Max: 12
-  timer_Max_Save: 0
+  timer: 13
+  timer_Max: 13
+  timer_Max_Save: 13
   timer_Bool: 0
-  go_Select1: 3
+  spawn_CanBe_Method_Timer_Counter: 1
+  hud_Time_Counter: 960000007d000000640000004b0000003200000019000000
+  hud_Time_Counter_Index: 0
+  spawn_GO_int_TypeSelect_Random_Range: 010000000100000001000000010000000100000001000000
+  spawn_GO_int_TypeSelect_Random_Range_index: 0
+  spawn_GO_int_TypeSelect_Random_Ranges: 010000000100000001000000010000000100000001000000
+  spawn_GO_int_TypeSelect_Random_Range_indexs: 0

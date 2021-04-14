@@ -949,6 +949,14 @@ MonoBehaviour:
   movementVelocityMax: -2
   rb: {fileID: 0}
   rigAnime: {fileID: 0}
+  pezin: {fileID: 501748720267415850}
+  tamanho: 0.4
+  chao:
+    serializedVersion: 2
+    m_Bits: 131089
+  piso: 0
+  congelado: 0
+  stunado: 0
 --- !u!114 &7601661483944977497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -984,7 +992,7 @@ MonoBehaviour:
   - {fileID: 8731339975849555308}
   - {fileID: 501748720267415850}
   m_Bounds:
-    m_Center: {x: -0.06920987, y: 0.030225396, z: 0}
+    m_Center: {x: -0.069209754, y: 0.030225515, z: 0}
     m_Extent: {x: 0.5703053, y: 0.62045956, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1

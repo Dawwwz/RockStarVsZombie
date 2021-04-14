@@ -19,6 +19,9 @@ public class Hud : MonoBehaviour
     [SerializeField] private Text timerTxt;
 
     [SerializeField] private Text ballPowerImpulse;
+    
+    [SerializeField] private GameObject[] zombieHeadTransform;
+
 
     [SerializeField] private Text Rockmode;
     [SerializeField] private GameObject winPanel,losePanel,pausePanel;
@@ -27,7 +30,7 @@ public class Hud : MonoBehaviour
 
     [SerializeField] private Image arrowBG;
     [SerializeField] private Image arrowBGs;
-
+    [SerializeField] private Image arrobackground;
     public static int zombienaTela; /// otimizar 
     private void Awake()
     {
@@ -92,15 +95,14 @@ public class Hud : MonoBehaviour
     }
     public void NextLevel()
     {
-        if(PlayerPrefs.GetInt("freelevel"+ levelManager.scenaAtualInt+1) == 1)
-        {
+
            // AudioManager.audioManager.guitarBGAS.volume = 0;
             Time.timeScale = 1;
             losePanel.SetActive(false);
             winPanel.SetActive(false);
             pausePanel.SetActive(false);
-            SceneManager.LoadScene("Level" + levelManager.scenaAtualInt+1);
-        }
+            SceneManager.LoadScene("Level" + (levelManager.scenaAtualInt +1));
+        
     }
     public void GamePause()
     {
@@ -166,5 +168,24 @@ public class Hud : MonoBehaviour
     public Image Get_HItTarget_ArrowBGs()
     {
         return arrowBGs;
+    }
+    public void Set_rockMOdeUI(int lalas)
+    {
+        for(int i = 0; i < lalas; i++)
+        {
+        zombieHeadTransform[i].SetActive(true);
+
+        }
+    }
+    public void Set_rockMOdeUIF()
+    {
+        for (int i = 0; i < 10; i++)
+        {
+            zombieHeadTransform[i].SetActive(false);
+        }
+    }
+    public void ArrowBGG(Sprite lala)
+    {
+         arrobackground.sprite = lala;
     }
 }

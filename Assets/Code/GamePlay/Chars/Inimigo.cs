@@ -5,6 +5,12 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Inimigo : Character
 {
+    [Header("CheckGround")]
+    [SerializeField] private Transform pezin;
+    [SerializeField] private float tamanho;
+    [SerializeField] private LayerMask chao ;
+    [SerializeField] private bool piso;
+    [SerializeField] private bool congelado,stunado;
     void Start()
     {
         Set_Zombie_Fly();
@@ -15,7 +21,8 @@ public class Inimigo : Character
     }
     private void FixedUpdate()
     {
-        Update_Movement();
+        Onground();
+        
         Vida();
         if(lifeBar.Get_Life_Bar_GO() != null)
         {
@@ -63,5 +70,33 @@ public class Inimigo : Character
         return lifeBar.Get_Life_Bar_GO();
     }
    
+    public void Onground()
+    {
+        if (!congelado && !stunado)
+        {    
+            piso = Physics2D.OverlapCircle(pezin.position, tamanho, chao);
+            if (piso)
+            {
+                Update_Movement();
+            }
+        }
+    }
+    public IEnumerator VelRechargeTime(float timer)
+    {
+        stunado = true;
+        Set_Velocity(false);
+        yield return new WaitForSeconds(timer);
+        Set_Velocity(true);
+        stunado = false;
+    }
+    public void VelRechargeTimes(float a)
+    {
+        StartCoroutine(VelRechargeTime(a));
+    }
+    public void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawSphere(pezin.position, tamanho);
+    }
 }
 

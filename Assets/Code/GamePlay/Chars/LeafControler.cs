@@ -29,7 +29,7 @@ public class LeafControler : MonoBehaviour
     }
     public void Set_Spawn_Leaf(Transform transform)
     {
-         spawnControler.Set_Select_GameObjectss(leafs, leaf, transform.position, 1);
+         spawnControler.Set_Select_GameObject(leafs, leaf,leaf, transform.position, 1);
       
     }
     public void Set_Leaf_Spawn()

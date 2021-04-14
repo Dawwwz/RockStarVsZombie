@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class ballsuppet : MonoBehaviour
 {
-    
-  
-    public float dogHeal = Player.ballPowerImpulse;
+
+    private Player player;
+    public float dogHeal ;
     // Start is called before the first frame update
     void Start()
     {
-      
+        player = FindObjectOfType<Player>();
+        dogHeal = player.Get_HitPower();
     }
 
     // Update is called once per frame

@@ -665,6 +665,14 @@ MonoBehaviour:
   movementVelocityMax: -0.5
   rb: {fileID: 0}
   rigAnime: {fileID: 0}
+  pezin: {fileID: 395442024637433386}
+  tamanho: 0.43
+  chao:
+    serializedVersion: 2
+    m_Bits: 131072
+  piso: 0
+  congelado: 0
+  stunado: 0
 --- !u!50 &395442025020304830
 Rigidbody2D:
   serializedVersion: 4

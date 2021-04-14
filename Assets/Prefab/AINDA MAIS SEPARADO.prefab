@@ -602,8 +602,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: f650499ae08936d4a8c24ce9a9381081, type: 3}
+  m_SortingOrder: 27
+  m_Sprite: {fileID: 21300000, guid: 9ae7d66804ec3cd42951967ca353bcef, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1244,6 +1244,12 @@ MonoBehaviour:
   guitarDmg: 0
   guitarNotes: 0
   ballSpawncd: 0
+  getSprite: {fileID: 1336293072876266687}
+  sprites:
+  - {fileID: 21300000, guid: 7efd4368e61174149a16aec359a7cee3, type: 3}
+  - {fileID: 21300000, guid: c12b9a5354f74b54cbb491e6a9b17c3a, type: 3}
+  - {fileID: 21300000, guid: 9ae7d66804ec3cd42951967ca353bcef, type: 3}
+  - {fileID: 21300000, guid: b792924e481a05148812c15a96e87700, type: 3}
   listPlayer: []
 --- !u!50 &1410844198
 Rigidbody2D:

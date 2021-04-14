@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class HitTarget : MonoBehaviour
 {
     [SerializeField] private Hud hud;
+    [SerializeField] private Player player;
     [SerializeField] private float rotateVelocity = 200;
     [SerializeField] private float rotateVelocitySave;
     [SerializeField] private float arrowZRotate, arrowY;
@@ -15,6 +16,7 @@ public class HitTarget : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = FindObjectOfType<Player>();
         hud = FindObjectOfType<Hud>();
         arrowBG = hud.Get_HItTarget_ArrowBG();
         arrowBGs = hud.Get_HItTarget_ArrowBGs();
@@ -27,11 +29,11 @@ public class HitTarget : MonoBehaviour
     }
     void SetaRotate()
     {
-        x = Player.ballPowerImpulse * Mathf.Cos(arrowZRotate * Mathf.Deg2Rad);//Força do chute e Calculo para angulo do chute
-        y = Player.ballPowerImpulse * Mathf.Sin(arrowZRotate * Mathf.Deg2Rad);
+        x = player.Get_HitPower() * Mathf.Cos(arrowZRotate * Mathf.Deg2Rad);//Força do chute e Calculo para angulo do chute
+        y = player.Get_HitPower() * Mathf.Sin(arrowZRotate * Mathf.Deg2Rad);
         arrowBG.rectTransform.eulerAngles = new Vector3(0, 0, arrowZRotate);// Adiciona rotação a SETA
         arrowBGs.rectTransform.localPosition = new Vector3(0, arrowY);
-        arrowY += rotateVelocity / 2 * Time.deltaTime;
+        arrowY += rotateVelocity / 1.2f * Time.deltaTime;
         arrowZRotate += rotateVelocity * Time.deltaTime;
         if (arrowZRotate >= 90)
         {

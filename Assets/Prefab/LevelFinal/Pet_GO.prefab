@@ -147,7 +147,7 @@ MonoBehaviour:
   voltando: 0
   indo: 0
   parado: 0
-  buffado: 1
+  buffado: 0
   petTelp: 1
 --- !u!70 &4938243858666331077
 CapsuleCollider2D:

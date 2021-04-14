@@ -51,10 +51,7 @@ public class Ball : MonoBehaviour
     // COLISÃO COM OS OBJETOS DO GAME
     public void FixedUpdate()
     {
-        if (jaFuiAcertado)
-        {
-            StartCoroutine("PossoSerAcertadoDnvEm");
-        }
+
     }
 
     public void dmgHUD()
@@ -93,9 +90,14 @@ public class Ball : MonoBehaviour
     }
     IEnumerator PossoSerAcertadoDnvEm()
     {
+        jaFuiAcertado = true;
         yield return new WaitForSeconds(2);
 
         jaFuiAcertado = false; 
+    }
+    public void sochama()
+    {
+        StartCoroutine(PossoSerAcertadoDnvEm());
     }
     public void Set_Search_For_Refs()
     {

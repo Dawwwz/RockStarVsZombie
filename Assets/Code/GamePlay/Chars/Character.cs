@@ -5,7 +5,7 @@ using UnityEngine;
 public class Character : MonoBehaviour
 {
     [Header("System's to help")]
-    [SerializeField] protected SpawnController spawnController;
+    [SerializeField] protected SpawnControlerBall spawnController;
     [SerializeField] protected Hud hud;
     [SerializeField] protected LeafControler leafControler;
     [SerializeField] protected Particlee particle;
@@ -93,7 +93,7 @@ public class Character : MonoBehaviour
     }
     public void Set_Search_For_Refs()
     {
-        spawnController = GameObject.Find("Spawn_Controller_Balls").GetComponent<SpawnController>();
+        spawnController = FindObjectOfType<SpawnControlerBall>();
         leafControler = FindObjectOfType<LeafControler>();
         hitTarget = FindObjectOfType<HitTarget>();
         rockMode = FindObjectOfType<RockMode>();
@@ -115,14 +115,15 @@ public class Character : MonoBehaviour
         yield return new WaitForSeconds(timer);
         hitBool = true;
     }
-   public IEnumerator VelRechargeTime(float timer)
+
+
+   
+    public float Get_hit()
     {
-        movementBool = false;
-        yield return new WaitForSeconds(timer);
-        movementBool = true;
+        return hitPower;
     }
-    public void VelRechargeTimes(float a)
+    public void Set_Hitpower(float mais)
     {
-        StartCoroutine(VelRechargeTime(a));
+        hitPower += mais;
     }
 }
