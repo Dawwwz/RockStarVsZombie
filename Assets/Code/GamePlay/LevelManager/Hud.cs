@@ -173,8 +173,10 @@ public class Hud : MonoBehaviour
     {
         for(int i = 0; i < lalas; i++)
         {
-        zombieHeadTransform[i].SetActive(true);
-
+        if(i < 10)
+            {
+               zombieHeadTransform[i].SetActive(true);
+            }
         }
     }
     public void Set_rockMOdeUIF()

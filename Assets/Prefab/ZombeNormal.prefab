@@ -945,8 +945,8 @@ MonoBehaviour:
   hitBoolAux: 0
   movementBool: 1
   movementBooll: 0
-  movementVelocity: -1
-  movementVelocityMax: -2
+  movementVelocity: -1.5
+  movementVelocityMax: -1.5
   rb: {fileID: 0}
   rigAnime: {fileID: 0}
   pezin: {fileID: 501748720267415850}

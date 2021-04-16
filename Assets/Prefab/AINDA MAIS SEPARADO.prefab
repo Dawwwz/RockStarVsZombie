@@ -1236,6 +1236,7 @@ MonoBehaviour:
   rb: {fileID: 1410844198}
   rigAnime: {fileID: 1336293073527290104}
   ballPowerImpulseMax: 100
+  tendencia: 0
   cliquei: 0
   segurandoclick: 0
   solteiOclick: 0
@@ -1317,6 +1318,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  hud: {fileID: 0}
   timer: 10
   timer_Max: 10
   timer_Bool: 0
@@ -1371,6 +1373,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hud: {fileID: 0}
+  player: {fileID: 0}
   rotateVelocity: 100
   rotateVelocitySave: 100
   arrowZRotate: 0

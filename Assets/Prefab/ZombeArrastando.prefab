@@ -116,7 +116,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 727050539779215680}
   m_LocalRotation: {x: -0, y: -0, z: 0.92260367, w: 0.38574928}
-  m_LocalPosition: {x: -0.47772387, y: -2.564738, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 727050541208056698}
@@ -252,8 +252,10 @@ GameObject:
   - component: {fileID: 727050540728461896}
   - component: {fileID: 727050540728461897}
   - component: {fileID: 727050540728461893}
-  - component: {fileID: 727050540728461894}
   - component: {fileID: 727050540728461895}
+  - component: {fileID: 1573606198864461282}
+  - component: {fileID: 6870738002686312912}
+  - component: {fileID: 8373699611575231452}
   m_Layer: 9
   m_Name: ZombeArrastando
   m_TagString: inimigo
@@ -355,44 +357,10 @@ MonoBehaviour:
   - {fileID: 727050541075568301}
   - {fileID: 727050541023545890}
   m_Bounds:
-    m_Center: {x: -0.5306726, y: -2.4207942, z: 0}
-    m_Extent: {x: 0.45161182, y: 0.26305556, z: 0}
+    m_Center: {x: -0.052948713, y: 0.143944, z: 0}
+    m_Extent: {x: 0.451612, y: 0.26305583, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
---- !u!114 &727050540728461894
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 727050540728461898}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f32a4e500ffcdad40882c5a8be349d45, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hud: {fileID: 0}
-  lifeBarPref: {fileID: 1649073032665256936, guid: 5cdd3970d528d19479580eff58f32dc8, type: 3}
-  lifeBartrue: {fileID: 0}
-  lifeBarPos: {fileID: 727050540965290489}
-  explodiu: 0
-  inimigoRB: {fileID: 0}
-  vidaMax: 2
-  vida: 2
-  velocidade: 1
-  podeDarDano: 1
-  dano: 0.5
-  attackSpeed: 1
-  coinGO: {fileID: 2499574143104783894, guid: 22d71a0b69c052647a1fbeaaf8deeb01, type: 3}
-  leafGO: {fileID: 0}
-  "posicaoDaCabe\xE7a": {fileID: 727050540415502951}
-  bola:
-    serializedVersion: 2
-    m_Bits: 1024
-  rangeDaCabeca: 0.35
-  colidiuComAbola: 0
-  pararDeColidir: 0
-  leafChanceSpawn: 0
 --- !u!50 &727050540728461895
 Rigidbody2D:
   serializedVersion: 4
@@ -414,6 +382,79 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!58 &1573606198864461282
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 727050540728461898}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.558668, y: -2.5835154}
+  serializedVersion: 2
+  m_Radius: 0.064923115
+--- !u!114 &6870738002686312912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 727050540728461898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0742971c9c22c54409560896216de1d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hud: {fileID: 0}
+  lifeBarPrefab: {fileID: 0}
+  lifeBarGameObject: {fileID: 0}
+--- !u!114 &8373699611575231452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 727050540728461898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f32a4e500ffcdad40882c5a8be349d45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnController: {fileID: 0}
+  hud: {fileID: 0}
+  leafControler: {fileID: 0}
+  particle: {fileID: 0}
+  hitTarget: {fileID: 0}
+  rockMode: {fileID: 0}
+  levelManager: {fileID: 0}
+  lifeBar: {fileID: 6870738002686312912}
+  lifeBarPos: {fileID: 727050540965290489}
+  lifeMax: 1
+  life: 1
+  dead: 0
+  hitPower: 1
+  hitSpeed: 1
+  hitBool: 0
+  hitBoolAux: 0
+  movementBool: 1
+  movementBooll: 0
+  movementVelocity: -1
+  movementVelocityMax: -1
+  rb: {fileID: 0}
+  rigAnime: {fileID: 0}
+  pezin: {fileID: 727050539779215711}
+  tamanho: 0.4
+  chao:
+    serializedVersion: 2
+    m_Bits: 131072
+  piso: 0
+  congelado: 0
+  stunado: 0
 --- !u!1 &727050540965290490
 GameObject:
   m_ObjectHideFlags: 0

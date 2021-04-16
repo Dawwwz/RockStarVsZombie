@@ -9,7 +9,7 @@ public class Player : Character
     
     [Header("HitAserAjustado")]
     [SerializeField] private float ballPowerImpulseMax;
-
+    [SerializeField] private float tendencia;
     [Header("Fases do Input")]
     public Touch touchPhases;
     [SerializeField] private bool cliquei;
@@ -160,7 +160,7 @@ public class Player : Character
                 {
 
                     player.GetComponent<Ball>().sochama();
-                    player.GetComponent<Rigidbody2D>().AddForce(new Vector2(hitTarget.GetAtributeX(), -hitTarget.GetAtributeY() + 0.19f), ForceMode2D.Force);
+                    player.GetComponent<Rigidbody2D>().AddForce(new Vector2(hitTarget.GetAtributeX(), -hitTarget.GetAtributeY() + tendencia), ForceMode2D.Force);
                     // AudioManager.audioManager.SoundEffect(0);
                 }
             }

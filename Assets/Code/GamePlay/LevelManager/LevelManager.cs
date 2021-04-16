@@ -7,6 +7,7 @@ public class LevelManager : MonoBehaviour
    
     [SerializeField] private LeafControler leafControler;
     [SerializeField] private Hud hud;
+    [SerializeField] public bool levelJaFoi;
     public string scenaAtualString;
     public int scenaAtualInt;
     public int[] levelAtual = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
@@ -27,7 +28,10 @@ public class LevelManager : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        Timer();
+        if (levelJaFoi)
+        {
+            Timer();
+        }
         Win();
     }
     public void Set_Win_Game(bool win)

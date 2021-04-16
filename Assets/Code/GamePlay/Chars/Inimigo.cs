@@ -11,13 +11,15 @@ public class Inimigo : Character
     [SerializeField] private LayerMask chao ;
     [SerializeField] private bool piso;
     [SerializeField] private bool congelado,stunado;
+
     void Start()
     {
+
         Set_Zombie_Fly();
         leafControler.Set_Leaf_Spawn();
-    
+
         lifeBar.SetLifeBarSpawn();
-        
+        lifeBar.SetLifeBarTransform(lifeBarPos);
     }
     private void FixedUpdate()
     {
@@ -27,6 +29,7 @@ public class Inimigo : Character
         if(lifeBar.Get_Life_Bar_GO() != null)
         {
             lifeBar.SetLifeBarTransform(lifeBarPos);
+            Debug.Log("lifebar");
         }
         if (transform.position.x < -5)
         {
@@ -75,6 +78,7 @@ public class Inimigo : Character
         if (!congelado && !stunado)
         {    
             piso = Physics2D.OverlapCircle(pezin.position, tamanho, chao);
+            Debug.Log(piso);
             if (piso)
             {
                 Update_Movement();

@@ -21,11 +21,16 @@ public class LeafControler : MonoBehaviour
     [SerializeField] private GameObject[] leafs;
 
     // Start is called before the first frame update
-    private void Start()
+    private void Awake()
     {
         spawnControler = FindObjectOfType<SpawnController>();
         levelManager = FindObjectOfType<LevelManager>();
+
         leafVoid = true;
+    }
+    private void Start()
+    {
+
     }
     public void Set_Spawn_Leaf(Transform transform)
     {
