@@ -29,7 +29,6 @@ public class Inimigo : Character
         if(lifeBar.Get_Life_Bar_GO() != null)
         {
             lifeBar.SetLifeBarTransform(lifeBarPos);
-            Debug.Log("lifebar");
         }
         if (transform.position.x < -5)
         {
@@ -75,14 +74,18 @@ public class Inimigo : Character
    
     public void Onground()
     {
-        if (!congelado && !stunado)
+        if (!congelado && !stunado || rb.gravityScale > 0)
         {    
             piso = Physics2D.OverlapCircle(pezin.position, tamanho, chao);
-            Debug.Log(piso);
             if (piso)
             {
                 Update_Movement();
             }
+        }
+        else if (!congelado && !stunado || rb.gravityScale == 0)
+        {
+                Update_Movement();
+            Debug.Log("entrei");
         }
     }
     public IEnumerator VelRechargeTime(float timer)

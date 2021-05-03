@@ -23,7 +23,6 @@ public class Character : MonoBehaviour
     [SerializeField] protected  float hitPower;
     [SerializeField] protected float hitSpeed;
     [SerializeField] public bool  hitBool;
-    [SerializeField] protected bool  hitBoolAux;
     [Header("movement")]
     [SerializeField] protected bool  movementBool;
     [SerializeField] protected bool movementBooll;
@@ -71,7 +70,7 @@ public class Character : MonoBehaviour
         if (movementBool && !dead)
         {
             rb.velocity = new Vector3(movementVelocity, rb.velocity.y);
-            if (transform.position.y < -3)
+            if (transform.position.y < -3.80f)
             {
                 transform.position = new Vector2(transform.position.x, -2);
                 return;

@@ -33,6 +33,15 @@ public class Player : Character
 
     void Start()
     {
+        if (PlayerPrefs.HasKey("hitPower"))
+        {
+            hitPower = PlayerPrefs.GetFloat("hitPower");
+        }
+        else if (!PlayerPrefs.HasKey("hitPower"))
+        {
+            hitPower = 1;
+        }
+        hitPower = PlayerPrefs.GetFloat("hitPower");
         hud.SetTxtBallPOwer(hitPower.ToString());
         rigAnime = GetComponent<Animator>();
         RigAnimation(true, false, false, false, false); // COMEÇA COM ANIMAÇÃO IDDLE

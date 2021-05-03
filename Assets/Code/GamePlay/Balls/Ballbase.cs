@@ -22,6 +22,7 @@ public class Ballbase : Ball
                     rockMode.Set_Diminuir_Spawn_Bola();
                 }
                 dmgHUD();
+                Debug.Log("ué");
                 collision.gameObject.GetComponent<Inimigo>().Set_Damage(danoTacada);
                 collision.gameObject.GetComponent<Inimigo>().Set_Life_Bar_Update();
             }

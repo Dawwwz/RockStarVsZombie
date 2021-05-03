@@ -891,9 +891,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coin: 1000000
   coinEphemeral: 0
-  zombiesAmount: 0
-  power: 1
-  CD: 100
 --- !u!4 &256996491
 Transform:
   m_ObjectHideFlags: 0
@@ -4043,7 +4040,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0.282, y: 1}
-  m_AnchoredPosition: {x: -13.5, y: -4}
+  m_AnchoredPosition: {x: -13.500004, y: -4}
   m_SizeDelta: {x: 44.8273, y: 47.80899}
   m_Pivot: {x: 0.4999997, y: 0.5}
 --- !u!114 &1158929988
@@ -6639,27 +6636,27 @@ MonoBehaviour:
     ballSpriteName: Base
     ballPrice: 0
     ballbuy: 0
-    ballBtnName: 
+    descricao: "Vc \xE9 um merda use isso"
   - ballID: 1
     ballSpriteName: spring
     ballPrice: 100
     ballbuy: 0
-    ballBtnName: 
+    descricao: molas?
   - ballID: 2
     ballSpriteName: pet
     ballPrice: 1000
     ballbuy: 0
-    ballBtnName: 
+    descricao: nhumi me sinto forte
   - ballID: 3
     ballSpriteName: cold
     ballPrice: 10000
     ballbuy: 0
-    ballBtnName: 
+    descricao: fica gelado ai
   - ballID: 4
     ballSpriteName: fire
     ballPrice: 100000
     ballbuy: 0
-    ballBtnName: 
+    descricao: buuum
   prefabInfos: []
   produtoPrefabGen: {fileID: 4655694968860773864, guid: 7635769be048c3f498ff2acc20d98130, type: 3}
   produtoPosition: {fileID: 367961690}
@@ -6670,28 +6667,28 @@ MonoBehaviour:
     guitarName: Red
     guitarBtnTxt: 
     guitarBuy: 0
-    descricao: 
+    descricao: "\xE9 oq tem"
   - guitarID: 1
     guitarSpriteName: dmg
     guitarPrice: 10000
     guitarName: blue
     guitarBtnTxt: 
     guitarBuy: 0
-    descricao: 
+    descricao: aiii
   - guitarID: 2
     guitarSpriteName: double
     guitarPrice: 50000
     guitarName: green
     guitarBtnTxt: 
     guitarBuy: 0
-    descricao: 
+    descricao: "vc \xE9 exagerado"
   - guitarID: 3
     guitarSpriteName: note
     guitarPrice: 100000
     guitarName: yellow
     guitarBtnTxt: 
     guitarBuy: 0
-    descricao: 
+    descricao: doms musicais?
   guitar_GO_List: []
   guitar_GO: {fileID: 4655694968860773864, guid: 867c9502a5cff674295240f1abf092c2, type: 3}
   guitar_Store_Position: {fileID: 856602658}
@@ -7026,7 +7023,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.03711818}
   m_AnchorMax: {x: 1, y: 0.3313417}
-  m_AnchoredPosition: {x: 1.4348145, y: 2.6125484}
+  m_AnchoredPosition: {x: 1.4348145, y: 2.6125488}
   m_SizeDelta: {x: -3.1303635, y: 7.1913223}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1739402170
@@ -7537,7 +7534,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1604285790}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 100
+  m_MaxValue: 10
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:

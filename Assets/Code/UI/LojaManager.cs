@@ -36,7 +36,7 @@ public class LojaManager : MonoBehaviour
         public string ballSpriteName;
         public float ballPrice;
         public bool ballbuy;
-        public string ballBtnName;
+        public string descricao;
       
     }
     [System.Serializable]
@@ -82,9 +82,11 @@ public class LojaManager : MonoBehaviour
             StoreSup atribProdutos = produtoPrefab.GetComponent<StoreSup>();
 
             //ATRIB DOS PRODUTOS
+
             atribProdutos.ballName.text = produto.ballSpriteName;
             atribProdutos.ballID =  produto.ballID;
             atribProdutos.ballPriceTxt.text = produto.ballPrice.ToString();
+            atribProdutos.descricao.text = produto.descricao;
             if (PlayerPrefs.GetInt("produtoLib"+atribProdutos.ballID) == 1)
             {
                 produto.ballbuy = true;
@@ -198,9 +200,12 @@ public class LojaManager : MonoBehaviour
             GameObject guitar_GO = Instantiate(this.guitar_GO) as GameObject;
             guitar_GO.transform.SetParent(guitar_Store_Position, false);
             Guitar_Store guitar_Store = guitar_GO.GetComponent<Guitar_Store>();
+
             guitar_Store.guitar_ID = guitar_Attribute.guitarID;
             guitar_Store.guitar_Name.text = guitar_Attribute.guitarSpriteName;
             guitar_Store.guitar_Price.text = guitar_Attribute.guitarPrice.ToString();
+            guitar_Store.guitar_Descricao.text = guitar_Attribute.descricao;
+
             guitar_GO_List.Add(guitar_GO);
                 
             if (PlayerPrefs.GetInt("GuitarBuy"+guitar_Attribute.guitarID) == 1)

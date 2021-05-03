@@ -66,6 +66,7 @@ MonoBehaviour:
   ballUseTxt: {fileID: 8885830538582902530}
   ballPriceTxt: {fileID: 2546196497738686244}
   ballName: {fileID: 1780771320139781176}
+  descricao: {fileID: 3037140687367999546}
   ballSprite: {fileID: 8073343401411711686}
   ballBtn: {fileID: 527257997842469686}
 --- !u!114 &8073343401411711686
@@ -110,7 +111,7 @@ GameObject:
   - component: {fileID: 4899028416457518513}
   - component: {fileID: 3037140687367999546}
   m_Layer: 5
-  m_Name: Text
+  m_Name: descricao
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

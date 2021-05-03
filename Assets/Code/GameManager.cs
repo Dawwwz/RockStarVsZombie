@@ -10,20 +10,6 @@ public  class GameManager : MonoBehaviour
     // ECONOMIA
     public float coin , coinEphemeral ;//Ephemeral SEMPRE SETAR PARA 0 QUANDO SAIR DA FAZE
 
-   
-
-   
-    // condition win 
-   
- 
-    public int zombiesAmount;
- 
-    public float power = 100 ;
-    public float CD = 100;
-    
-
-
-    
     void Awake()
     {
         if (instanceGameManager == null)

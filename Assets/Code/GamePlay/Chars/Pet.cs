@@ -9,8 +9,11 @@ public class Pet : Character
     public bool indo;
     public bool parado;
     public bool buffado;
+
     public bool petTelp;
 
+    public bool contador;
+    public float tempo;
     void Start()
     {
         lifeBar.SetLifeBarSpawn();
@@ -28,7 +31,18 @@ public class Pet : Character
 
         Update_Movement();
         Set_IA_Pet_Voltar();
-
+        
+        if(petTelp)
+        {
+            tempo -= Time.deltaTime;
+            if(tempo <= 0)
+            {
+            petTelp = false;
+            if(!voltando && !hitBool)
+            Set_Teleport();
+            petTelp = true;
+            }
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -71,8 +85,7 @@ public class Pet : Character
     {
         if (collision.gameObject.CompareTag("inimigo"))
         {
-            if (!voltando)
-            {
+            
 
                 if (!voltando)
                 {
@@ -89,11 +102,8 @@ public class Pet : Character
                         }
                     }
                 } 
-                else if (!hitBool && !voltando && petTelp)
-                {
-                    Set_Teleport();
-                }
-            }
+                
+            
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -120,12 +130,7 @@ public class Pet : Character
         hitBool = true;
 
     }
-    IEnumerator CDtelep(float cdTelep)
-    {
-        petTelp = false;
-        yield return new WaitForSeconds(cdTelep);
-        petTelp = true;
-    }
+   
     public void Set_Buff_Pet()
     {
         if (!voltando && petTelp && buffado) 
@@ -204,8 +209,7 @@ public class Pet : Character
         {
             if (verificaInimigo[i].transform.position.x <= transform.position.x
                 && verificaInimigo[i].transform.position.y >= 2.7)
-            {
-                StartCoroutine(CDtelep(3));
+            {       
                 transform.position = new Vector2(verificaInimigo[i].transform.position.x - 1f, verificaInimigo[i].transform.position.y + 1);
             }
         }

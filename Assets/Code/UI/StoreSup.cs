@@ -9,6 +9,7 @@ public class StoreSup : MonoBehaviour
     public Text ballUseTxt;
     public Text ballPriceTxt;
     public Text ballName;
+    public Text descricao;
     public Image ballSprite;
     public GameObject ballBtn;
 

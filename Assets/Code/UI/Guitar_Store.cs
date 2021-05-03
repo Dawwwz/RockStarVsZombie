@@ -8,6 +8,7 @@ public class Guitar_Store : MonoBehaviour
     public Text guitar_Name;
     public Text guitar_Price;
     public Text guitar_Stats_Txt;
+    public Text guitar_Descricao;
     public Image guitar_Img;
     public GameObject guitar_Btn;
     public Text descricao;

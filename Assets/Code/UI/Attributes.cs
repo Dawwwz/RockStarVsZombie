@@ -10,7 +10,15 @@ public class Attributes : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (PlayerPrefs.HasKey("hitPower"))
+        {
+           power.value = PlayerPrefs.GetFloat("hitPower");
+        }
+        else if (!PlayerPrefs.HasKey("hitPower"))
+        {
+            PlayerPrefs.SetFloat("hitPower", PlayerPrefs.GetFloat("hitPower") + 1);
+            power.value = PlayerPrefs.GetFloat("hitPower");
+        }
     }
 
     // Update is called once per frame
@@ -20,8 +28,9 @@ public class Attributes : MonoBehaviour
     }
     public void IncreasePower()
     {
-       GameManager.instanceGameManager.power += 10;
-        power.value = GameManager.instanceGameManager.power ;
+        Debug.Log(PlayerPrefs.GetFloat("hitPower"));
+        PlayerPrefs.SetFloat("hitPower", PlayerPrefs.GetFloat("hitPower") +0.10f);
+        power.value = PlayerPrefs.GetFloat("hitPower");
 
     }
 }
