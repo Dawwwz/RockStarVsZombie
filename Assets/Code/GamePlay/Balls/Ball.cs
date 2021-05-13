@@ -27,6 +27,14 @@ public class Ball : MonoBehaviour
     {
         Set_Search_For_Refs(); 
     }
+    private void LateUpdate()
+    {
+        if (transform.position.y <= -5.5f)
+        {
+            Destroy(gameObject);
+        }
+        
+    }
     public  void Start()
     {
         
@@ -56,8 +64,7 @@ public class Ball : MonoBehaviour
 
     public void dmgHUD()
     {
-        podeDarDano = false;
-        StartCoroutine("CD");
+
         if (danoTacada < 0 )
         {
             danoTacada = danoTacada * -1;
@@ -81,8 +88,9 @@ public class Ball : MonoBehaviour
         
       //  AudioManager.audioManager.SoundEffect(2);
     }
-    IEnumerator CD()
+    protected IEnumerator CD()
     {
+        podeDarDano = false;
         yield return new WaitForSeconds(frequenciaDmg);
         
         podeDarDano = true;

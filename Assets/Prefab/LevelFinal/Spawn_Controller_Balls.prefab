@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 298b86f9bfba12a459bff32393ab7d5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zombie: 0
   levelManager: {fileID: 0}
   hud: {fileID: 0}
   spawn_GO:
@@ -66,6 +67,7 @@ MonoBehaviour:
   timer_Max: 6
   timer_Max_Save: 6
   timer_Bool: 0
+  coin: {fileID: 2499574143104783894, guid: 22d71a0b69c052647a1fbeaaf8deeb01, type: 3}
 --- !u!1 &6159193926747348058
 GameObject:
   m_ObjectHideFlags: 0

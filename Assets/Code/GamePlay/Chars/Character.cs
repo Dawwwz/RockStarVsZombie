@@ -23,6 +23,8 @@ public class Character : MonoBehaviour
     [SerializeField] protected  float hitPower;
     [SerializeField] protected float hitSpeed;
     [SerializeField] public bool  hitBool;
+    [SerializeField] public bool hitBoolDefesa; 
+                     
     [Header("movement")]
     [SerializeField] protected bool  movementBool;
     [SerializeField] protected bool movementBooll;
@@ -36,16 +38,24 @@ public class Character : MonoBehaviour
         Set_Search_For_Refs();
         rb = GetComponent<Rigidbody2D>();
     }
+    private void LateUpdate()
+    {
+        if (transform.position.y <= -5.5f || transform.position.x <= -50 || transform.position.x >= 50)
+        {
+            life = 0;
+            Destroy(gameObject, 0.5f);
+            
+        }
+    }
     public float Get_Life()
     {
         return life;
     }
     public void Set_Damage(float value)
     {
-        if (life > 0 && hitBool)
+        if (life > 0 )
         {
-            this.life -= value;
-            StartCoroutine(HitRechargeTime(hitSpeed));
+            this.life -= value;   
         }
     }
     public void Set_Life(float value)
@@ -85,13 +95,18 @@ public class Character : MonoBehaviour
                              )
     {   
         rigAnime.SetBool("parado", idle);
-        //rigAnime.SetBool("andando", walk);
         rigAnime.SetBool("segurandodano", hitEnergyze);
         rigAnime.SetBool("batendo", hit);
         rigAnime.SetBool("morrendo", dying);
     }
+    public void RigAnimationn(bool idle, bool walk)
+    {
+        rigAnime.SetBool("parado", idle);
+        rigAnime.SetBool("andando", walk);
+    }
     public void Set_Search_For_Refs()
     {
+        rigAnime = GetComponent<Animator>();
         spawnController = FindObjectOfType<SpawnControlerBall>();
         leafControler = FindObjectOfType<LeafControler>();
         hitTarget = FindObjectOfType<HitTarget>();
@@ -108,21 +123,29 @@ public class Character : MonoBehaviour
     {
         return hitPower;
     }
-    IEnumerator HitRechargeTime(float timer)
-    {
+    public IEnumerator HitRechargeTime(float timer)
+    { 
         hitBool = false;
         yield return new WaitForSeconds(timer);
         hitBool = true;
     }
 
 
-   
+
     public float Get_hit()
     {
-        return hitPower;
+        return hitPower; 
     }
     public void Set_Hitpower(float mais)
     {
         hitPower += mais;
+    }
+    public bool Get_hitBool()
+    {
+        return this.hitBool;
+    }
+    public float Get_hitspeed()
+    {
+        return hitSpeed;
     }
 }

@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 80263094600762266}
   m_LocalRotation: {x: -0, y: -0, z: 0.690963, w: 0.72289014}
-  m_LocalPosition: {x: 0.16795596, y: 0.15987915, z: 0}
+  m_LocalPosition: {x: 0.16563876, y: 0.12511872, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1492758806128416716}
@@ -68,7 +68,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2377630371546175903}
   m_Layer: 9
-  m_Name: Peito
+  m_Name: body
   m_TagString: inimigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -81,7 +81,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 254660562598304753}
-  m_LocalRotation: {x: 0, y: 0, z: -0.038376726, w: 0.99926335}
+  m_LocalRotation: {x: -0, y: -0, z: 0.040173825, w: 0.9991927}
   m_LocalPosition: {x: 0.0943459, y: 0.000000056497502, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -90,7 +90,7 @@ Transform:
   - {fileID: 1954031714355096511}
   m_Father: {fileID: 3910455046207213318}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 4.605}
 --- !u!1 &627032653080423955
 GameObject:
   m_ObjectHideFlags: 0
@@ -387,14 +387,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3221336106374198951}
-  m_LocalRotation: {x: 0, y: 0, z: 0.016659804, w: 0.99986124}
+  m_LocalRotation: {x: 0, y: 0, z: 0.0801468, w: 0.9967831}
   m_LocalPosition: {x: 0.23654415, y: 0.0036898002, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8491514098638608682}
   m_Father: {fileID: 2377630371546175903}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 9.194}
 --- !u!58 &1699490010
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -497,7 +497,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5027336070253323912}
   m_LocalRotation: {x: 0, y: 0, z: 0.7337223, w: 0.67944944}
-  m_LocalPosition: {x: -0.08003891, y: -0.15930413, z: 0}
+  m_LocalPosition: {x: -0.08003891, y: -0.15930413, z: 5.37}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2377630371546175903}
@@ -649,14 +649,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7805519256043521936}
-  m_LocalRotation: {x: -0, y: -0, z: 0.7482593, w: -0.6634064}
-  m_LocalPosition: {x: 0.16618691, y: -0.17890653, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 0.71713513, w: -0.6969342}
+  m_LocalPosition: {x: 0.14996526, y: -0.12792405, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3201532182974002808}
   m_Father: {fileID: 2377630371546175903}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 263.12}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 268.363}
 --- !u!61 &5015148151911756552
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -819,6 +819,7 @@ GameObject:
   - component: {fileID: 7601661483944977497}
   - component: {fileID: 2276025432175389193}
   - component: {fileID: 21318969}
+  - component: {fileID: 1615279498}
   m_Layer: 9
   m_Name: ZombeNormal
   m_TagString: inimigo
@@ -939,14 +940,14 @@ MonoBehaviour:
   lifeMax: 2
   life: 2
   dead: 0
-  hitPower: 0.5
-  hitSpeed: 0.5
+  hitPower: 1
+  hitSpeed: 0.8
   hitBool: 1
-  hitBoolAux: 0
+  hitBoolDefesa: 0
   movementBool: 1
   movementBooll: 0
-  movementVelocity: -1.5
-  movementVelocityMax: -1.5
+  movementVelocity: -1.25
+  movementVelocityMax: -1.25
   rb: {fileID: 0}
   rigAnime: {fileID: 0}
   pezin: {fileID: 501748720267415850}
@@ -992,8 +993,8 @@ MonoBehaviour:
   - {fileID: 8731339975849555308}
   - {fileID: 501748720267415850}
   m_Bounds:
-    m_Center: {x: -0.069209754, y: 0.030225515, z: 0}
-    m_Extent: {x: 0.5703053, y: 0.62045956, z: 0}
+    m_Center: {x: -0.10473794, y: 0.018976152, z: 5.37}
+    m_Extent: {x: 0.515187, y: 0.6092104, z: 0.00000047683716}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!70 &2276025432175389193
@@ -1027,3 +1028,22 @@ MonoBehaviour:
   hud: {fileID: 0}
   lifeBarPrefab: {fileID: 1649073032665256936, guid: 5cdd3970d528d19479580eff58f32dc8, type: 3}
   lifeBarGameObject: {fileID: 0}
+--- !u!95 &1615279498
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8919781676040293161}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6550c480e20a8314eaaba863198a15c2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 1
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

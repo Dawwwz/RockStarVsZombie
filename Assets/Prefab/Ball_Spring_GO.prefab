@@ -174,7 +174,7 @@ MonoBehaviour:
   dmgPos: {fileID: 916912996129860539}
   jaFuiAcertado: 0
   podeDarDano: 1
-  frequenciaDmg: 0.09
+  frequenciaDmg: 1
   deathTime: 999
   danoTacada: 0
   danotacaday: 0

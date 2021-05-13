@@ -74,6 +74,7 @@ GameObject:
   - component: {fileID: 2671626407565454219}
   - component: {fileID: 2671626407565454218}
   - component: {fileID: 653955481}
+  - component: {fileID: 2359742461576975760}
   m_Layer: 9
   m_Name: ZombeVOador
   m_TagString: inimigo
@@ -182,8 +183,8 @@ MonoBehaviour:
   - {fileID: 2671626409213632026}
   - {fileID: 2671626409201989070}
   m_Bounds:
-    m_Center: {x: 0.021793157, y: -0.04405451, z: 0}
-    m_Extent: {x: 0.44280505, y: 0.5346982, z: 0}
+    m_Center: {x: 0.021793574, y: -0.04405451, z: 0}
+    m_Extent: {x: 0.44280457, y: 0.5346982, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!50 &2671626407565454219
@@ -228,13 +229,12 @@ MonoBehaviour:
   levelManager: {fileID: 0}
   lifeBar: {fileID: 653955481}
   lifeBarPos: {fileID: 1232925626}
-  lifeMax: 2
-  life: 2
+  lifeMax: 1.5
+  life: 1.5
   dead: 0
   hitPower: 1
   hitSpeed: 1
   hitBool: 1
-  hitBoolAux: 0
   movementBool: 1
   movementBooll: 0
   movementVelocity: -1
@@ -264,6 +264,25 @@ MonoBehaviour:
   hud: {fileID: 0}
   lifeBarPrefab: {fileID: 1649073032665256936, guid: 5cdd3970d528d19479580eff58f32dc8, type: 3}
   lifeBarGameObject: {fileID: 0}
+--- !u!95 &2359742461576975760
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2671626407565454216}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 32338ad5ee8993f40bae65e3612c6788, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2671626407637585573
 GameObject:
   m_ObjectHideFlags: 0
@@ -534,7 +553,7 @@ GameObject:
   - component: {fileID: 2671626408166219871}
   - component: {fileID: 2671626408166219872}
   m_Layer: 9
-  m_Name: peito
+  m_Name: body
   m_TagString: inimigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

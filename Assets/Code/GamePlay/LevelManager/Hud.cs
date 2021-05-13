@@ -6,14 +6,15 @@ using UnityEngine.SceneManagement;
 public class Hud : MonoBehaviour
 {
     [Header("SitemTOhelp")]
-   
-    public static Hud instance;
 
+
+    [SerializeField] private CoinManager coinManager;
     [SerializeField] private LeafControler leafControler;
     [SerializeField] private RockMode rockMode;
     [SerializeField] private Pet pet;
     [SerializeField] private LevelManager levelManager;
 
+    [Header("Hud")]
     [SerializeField] private GameObject zombieOutOfScreen;
     [SerializeField] private Image timerImg;
     [SerializeField] private Text timerTxt;
@@ -21,7 +22,7 @@ public class Hud : MonoBehaviour
     [SerializeField] private Text ballPowerImpulse;
     
     [SerializeField] private GameObject[] zombieHeadTransform;
-
+    [SerializeField] private GameObject btnDog; 
 
     [SerializeField] private Text Rockmode;
     [SerializeField] private GameObject winPanel,losePanel,pausePanel;
@@ -34,15 +35,13 @@ public class Hud : MonoBehaviour
     public static int zombienaTela; /// otimizar 
     private void Awake()
     {
+        
         arrowBG = GameObject.Find("Img_ArrowBG").GetComponent<Image>();
     }
     void Start()
     {
-        
-        if (instance == null)
-        {
-            instance = this;
-        }
+
+        coinManager = FindObjectOfType<CoinManager>();
         levelManager = FindObjectOfType<LevelManager>();
         leafControler = FindObjectOfType<LeafControler>();
         rockMode = FindObjectOfType<RockMode>();
@@ -56,21 +55,19 @@ public class Hud : MonoBehaviour
     }
     public void AttHuds()
     {
-      ///  coinTxt.text = GameManager.instanceGameManager.coinEphemeral.ToString();
+        coinTxt.text = coinManager.Get_Ephemeral().ToString();
         levelInfo.text = levelManager.scenaAtualString;
-        //Rockmode.text = "Hits" + rockMode.Get_Head_Shot_count();
         timerTxt.text = levelManager.Get_Time().ToString();
     }
     public void GameWin()
     {
         if (levelManager.gameWin)
         {
-            coinTxt.text = PlayerPrefs.GetFloat("Coin").ToString();            Time.timeScale = 0;
+
+            // Time.timeScale = 0;
            // AudioManager.audioManager.guitarBGAS.volume = 0;
-           // CoinEpheremal.text = GameManager.instanceGameManager.coinEphemeral.ToString();
-           // CoinEthernal.text = GameManager.instanceGameManager.coin.ToString();
-           // GameManager.instanceGameManager.CoinSave();
-            pausePanel.SetActive(false);
+            coinManager.CoinSave();
+            //pausePanel.SetActive(false);
             winPanel.SetActive(true);
         }
     }
@@ -154,7 +151,9 @@ public class Hud : MonoBehaviour
     }
     public void Set_Btn_Pet()
     {
+        animbtndogg();
         pet.Set_IA_Pet_Avançar();
+        
     }
     public void Set_Timer(float time)
     {
@@ -189,5 +188,18 @@ public class Hud : MonoBehaviour
     public void ArrowBGG(Sprite lala)
     {
          arrobackground.sprite = lala;
+    }
+
+    public void animbtndog()
+    {
+        
+        btnDog.GetComponent<Animator>().SetBool("andando", true);
+        btnDog.GetComponent<Animator>().SetBool("parado", false);
+    }
+    public void animbtndogg()
+    {
+        
+        btnDog.GetComponent<Animator>().SetBool("andando", false);
+        btnDog.GetComponent<Animator>().SetBool("parado", true);
     }
 }

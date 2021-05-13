@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2687693884379844431}
   - component: {fileID: 2687693884379844430}
+  - component: {fileID: 2077017412}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -45,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leafControler: {fileID: 0}
   hud: {fileID: 0}
+  levelJaFoi: 1
   scenaAtualString: 
   scenaAtualInt: 0
   levelAtual: 0100000002000000030000000400000005000000060000000700000008000000090000000a000000
@@ -53,3 +55,18 @@ MonoBehaviour:
   gameIsPlaying: 1
   gamePause: 0
   time: 180
+--- !u!114 &2077017412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2687693884379844428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 476550c606983664a94bd2722fff2d7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coin: 0
+  coinEphemeral: 0
+  gameplayCoin: 0

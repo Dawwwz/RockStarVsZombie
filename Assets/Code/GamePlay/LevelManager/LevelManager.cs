@@ -13,6 +13,7 @@ public class LevelManager : MonoBehaviour
     public int[] levelAtual = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
     public bool gameLose, gameWin, gameIsPlaying, gamePause;
     public float time;
+    public bool stopBtn = false;
     void Start()
     {
         leafControler = FindObjectOfType<LeafControler>();
@@ -28,9 +29,11 @@ public class LevelManager : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        
         if (levelJaFoi)
         {
             Timer();
+            
         }
         Win();
     }
@@ -63,17 +66,26 @@ public class LevelManager : MonoBehaviour
         }
     }
     public float Get_Time()
-    {
+    {  
         return time;
     }
     void Win()
     {
         if (Get_Time() <= 0 && Hud.zombienaTela == 0)
         {
+            if (!stopBtn)
+            {
+                
+            hud.animbtndog();
+                stopBtn = true;
+            }
+            time = 0;
             Set_Win_Game(true);
             
+            
             GameObject[] verLeaf = GameObject.FindGameObjectsWithTag("leaf");
-            if (verLeaf.Length == 0)
+            GameObject[] varcoin = GameObject.FindGameObjectsWithTag("Coin");
+            if (verLeaf.Length == 0 && varcoin.Length == 0)
             {
                 if (PlayerPrefs.GetInt("freelevel" + 2) == 1)
                 {

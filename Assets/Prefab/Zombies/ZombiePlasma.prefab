@@ -84,7 +84,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7083323042410951280}
   m_LocalRotation: {x: 0, y: -0, z: -0.9996881, w: 0.024975283}
-  m_LocalPosition: {x: -0.00651763, y: 0.07074188, z: 0}
+  m_LocalPosition: {x: 0.02000143, y: 0.069661744, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7083323043372059904}
@@ -148,7 +148,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7083323042765328603}
   m_LocalRotation: {x: 0, y: 0, z: -0.042096, w: 0.9991136}
-  m_LocalPosition: {x: 0.086394615, y: -0.000000015049869, z: 0}
+  m_LocalPosition: {x: 0.088624105, y: 0.00018078089, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7083323043670580968}
@@ -170,6 +170,7 @@ GameObject:
   - component: {fileID: 7083323042894470067}
   - component: {fileID: 7083323042894470066}
   - component: {fileID: 7083323042894470093}
+  - component: {fileID: 1195172675}
   m_Layer: 15
   m_Name: ZombiePlasma
   m_TagString: inimigo
@@ -278,8 +279,8 @@ MonoBehaviour:
   - {fileID: 7083323043664342523}
   - {fileID: 7083323042395442614}
   m_Bounds:
-    m_Center: {x: -0.07125467, y: 0.026463151, z: 0}
-    m_Extent: {x: 0.52684253, y: 0.56709236, z: 0}
+    m_Center: {x: -0.08081478, y: 0.04033947, z: 0}
+    m_Extent: {x: 0.5364017, y: 0.553216, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!70 &7083323042894470089
@@ -340,13 +341,12 @@ MonoBehaviour:
   levelManager: {fileID: 0}
   lifeBar: {fileID: 7083323042894470093}
   lifeBarPos: {fileID: 7083323043374319843}
-  lifeMax: 1
-  life: 1
+  lifeMax: 2
+  life: 2
   dead: 0
   hitPower: 1
   hitSpeed: 1
   hitBool: 1
-  hitBoolAux: 0
   movementBool: 1
   movementBooll: 1
   movementVelocity: -1
@@ -376,6 +376,25 @@ MonoBehaviour:
   hud: {fileID: 0}
   lifeBarPrefab: {fileID: 1649073032665256936, guid: 5cdd3970d528d19479580eff58f32dc8, type: 3}
   lifeBarGameObject: {fileID: 0}
+--- !u!95 &1195172675
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7083323042894470088}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4c950f3334117f34fb91ad476b1f597e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7083323043165221990
 GameObject:
   m_ObjectHideFlags: 0
@@ -518,7 +537,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7083323043269753515}
   m_LocalRotation: {x: 0, y: -0, z: -0.99999744, w: 0.0022639772}
-  m_LocalPosition: {x: 0.0043948544, y: -0.10445099, z: 0}
+  m_LocalPosition: {x: 0.0054783267, y: -0.10772262, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7083323043533341422}
@@ -535,7 +554,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7083323043309913820}
   m_Layer: 15
-  m_Name: bone_2
+  m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -704,7 +723,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7083323043533341417}
   m_LocalRotation: {x: 0, y: 0, z: -0.006659269, w: 0.9999778}
-  m_LocalPosition: {x: 0.10318539, y: -0.0000001235259, z: 0}
+  m_LocalPosition: {x: 0.07623788, y: 0.0018876833, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7083323043664342523}
@@ -735,7 +754,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7083323043601384268}
   m_LocalRotation: {x: -0, y: -0, z: 0.6423395, w: 0.7664202}
-  m_LocalPosition: {x: 0.063272834, y: 0.11673207, z: 0}
+  m_LocalPosition: {x: 0.076075226, y: 0.13247293, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7083323042765328600}
@@ -785,7 +804,7 @@ GameObject:
   - component: {fileID: 7083323043621610111}
   m_Layer: 15
   m_Name: Cabeca
-  m_TagString: Untagged
+  m_TagString: inimigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

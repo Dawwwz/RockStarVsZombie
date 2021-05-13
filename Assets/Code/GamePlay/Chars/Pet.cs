@@ -9,13 +9,18 @@ public class Pet : Character
     public bool indo;
     public bool parado;
     public bool buffado;
-
     public bool petTelp;
-
     public bool contador;
     public float tempo;
+    [SerializeField] private CoinManager coinManager;
+    [SerializeField] private Transform pezin;
+    [SerializeField] private float tamanho;
+    [SerializeField] private LayerMask chao;
+    [SerializeField] private bool piso;
+
     void Start()
     {
+        coinManager = FindObjectOfType<CoinManager>();
         lifeBar.SetLifeBarSpawn();
         lifeBar.SetLifeBarTransform(lifeBarPos);
         Set_IA_Parado();
@@ -37,10 +42,14 @@ public class Pet : Character
             tempo -= Time.deltaTime;
             if(tempo <= 0)
             {
-            petTelp = false;
-            if(!voltando && !hitBool)
-            Set_Teleport();
-            petTelp = true;
+                petTelp = false;
+                piso = Physics2D.OverlapCircle(pezin.position, tamanho, chao);
+                if (!voltando && !hitBool && piso)
+                    {
+                     Set_Teleport();
+                    }
+                petTelp = true;
+                tempo = 1.5f;
             }
         }
     }
@@ -50,9 +59,8 @@ public class Pet : Character
         if(collision.gameObject.CompareTag ("Coin") )
         {
             Destroy(collision.gameObject);
-            GameManager.instanceGameManager.coinEphemeral += 100;
-           
-            Hud.instance.AttHuds();
+            coinManager.CoinIncreaseGameplay(Random.Range(1,1000));
+            hud.AttHuds();
         }
 
         if (collision.gameObject.CompareTag("leaf")) // achhar outra forma de transportar a folha
@@ -70,12 +78,21 @@ public class Pet : Character
                 Inimigo a = collision.gameObject.GetComponent<Inimigo>();
                 if (a != null)
                 {
-                    Set_Damage(a.Get_HitPower());
-                    Set_Life_Bar_Update();
+                    if (a.Get_hitBool())
+                    {
+                        Set_Damage(a.Get_HitPower());
+                        StartCoroutine(a.HitRechargeTime(a.Get_hitspeed()));
+                        Set_Life_Bar_Update();
+                    }
                     if (buffado)
                     {
+                        if (hitBool)
+                        {
+                         gameObject.transform.localScale = new Vector2(1, 2.4f);
                          a.Set_Damage(hitPower);
+                         StartCoroutine(HitRechargeTime(hitSpeed));
                          a.Set_Life_Bar_Update();                            
+                        }
                     } 
                 } 
             }
@@ -87,23 +104,29 @@ public class Pet : Character
         {
             
 
-                if (!voltando)
+            if (!voltando)
+            {
+                Inimigo a = collision.gameObject.GetComponent<Inimigo>();
+                if (a != null)
                 {
-                    Inimigo a = collision.gameObject.GetComponent<Inimigo>();
-                    if (a != null)
+                    if (a.Get_hitBool())
                     {
-                        Set_Damage(a.Get_HitPower());
-                        Set_Life_Bar_Update();
-                        if (buffado)
+                    Set_Damage(a.Get_HitPower());
+                    StartCoroutine(a.HitRechargeTime(a.Get_hitspeed()));
+                    Set_Life_Bar_Update();
+                    }
+                    if (buffado)
+                    {
+                        if (hitBool)
                         {
                             gameObject.transform.localScale = new Vector2(1, 2.4f);
                             a.Set_Damage(hitPower);
+                            StartCoroutine(HitRechargeTime(hitSpeed));
                             a.Set_Life_Bar_Update();
                         }
                     }
-                } 
-                
-            
+                }
+            }      
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -124,6 +147,7 @@ public class Pet : Character
     }
     IEnumerator CD()
     {
+        hitBool = false;
 
         yield return new WaitForSeconds(hitSpeed);
 
@@ -159,7 +183,7 @@ public class Pet : Character
         //CONDIÇÕES PARA VOLTAR
         //
             // AJEITAR PARADA DA FOLLHAAA SKALE E VOLTAR NAO TA COLIDINDO QUANDO VOLTAA
-            if ( !voltando && life <= 0 || transform.position.x > 12.5f  /* || transform.childCount > 1*/)
+            if ( !voltando && life <= 0 || transform.position.x > 8.51f  /* || transform.childCount > 1*/)
             {
                 gameObject.GetComponent<CapsuleCollider2D>().size = new Vector2(gameObject.GetComponent<CapsuleCollider2D>().size.x, 1);
                 gameObject.transform.localScale = new Vector2(1, 1);
@@ -214,5 +238,9 @@ public class Pet : Character
             }
         }
     }
-    
+    public void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawSphere(pezin.position, tamanho);
+    }
 }

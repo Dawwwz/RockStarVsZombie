@@ -7,8 +7,11 @@ public class SpawnController : MonoBehaviour
     //header
     //hud
 
-    [Header("HUD TIMER")]
 
+
+   
+    [Header("HUD TIMER")]
+    [SerializeField] protected int zombie;
     [SerializeField] protected LevelManager levelManager;
     [SerializeField] protected Hud hud;
     [Header("Instantiate")]
@@ -27,13 +30,13 @@ public class SpawnController : MonoBehaviour
 
     [SerializeField] protected bool spawn_CanBe_Method_Standart_Cycles;
 
-    [Header("Spawn_Hud_Time")]
-
+     
     [Header(" Timer")]
     [SerializeField] protected float timer;
     [SerializeField] protected float timer_Max;
     [SerializeField] protected float timer_Max_Save;
     [SerializeField] protected bool timer_Bool;
+    public GameObject coin;
 
 
     // Start is called before the first frame update
@@ -57,6 +60,12 @@ public class SpawnController : MonoBehaviour
         {
             Instantiate(GO[Random.Range(go_Select, go_Sellect)], spawn_Position, Quaternion.identity);
         }
+    }
+    public void Set_Select_GameObjec(GameObject GO, Vector3 spawn_Position)
+    {
+        
+            Instantiate(GO, spawn_Position, Quaternion.identity);
+        
     }
     public void Set_Spawn_GameObjects_In_Standard_Cycles()
     {

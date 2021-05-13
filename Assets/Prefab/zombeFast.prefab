@@ -345,6 +345,7 @@ GameObject:
   - component: {fileID: 8714831765119097499}
   - component: {fileID: 7587919803540955254}
   - component: {fileID: 4251029769326571759}
+  - component: {fileID: 1117426421}
   m_Layer: 9
   m_Name: zombeFast
   m_TagString: inimigo
@@ -454,8 +455,8 @@ MonoBehaviour:
   - {fileID: 643697278207375562}
   - {fileID: 426274986091888456}
   m_Bounds:
-    m_Center: {x: 0.16953823, y: 0.19183746, z: 0}
-    m_Extent: {x: 0.44339564, y: 0.44813567, z: 0}
+    m_Center: {x: 0.16953757, y: 0.19183746, z: 0}
+    m_Extent: {x: 0.44339606, y: 0.44813567, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!114 &8714831765119097499
@@ -485,7 +486,6 @@ MonoBehaviour:
   hitPower: 1
   hitSpeed: 0.5
   hitBool: 1
-  hitBoolAux: 0
   movementBool: 1
   movementBooll: 1
   movementVelocity: -3
@@ -536,6 +536,25 @@ MonoBehaviour:
   hud: {fileID: 0}
   lifeBarPrefab: {fileID: 1649073032665256936, guid: 5cdd3970d528d19479580eff58f32dc8, type: 3}
   lifeBarGameObject: {fileID: 0}
+--- !u!95 &1117426421
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4504497657893403596}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 38b14103a38805f4fb8d5ca3a3e42235, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4553078588887722705
 GameObject:
   m_ObjectHideFlags: 0
@@ -578,7 +597,7 @@ GameObject:
   - component: {fileID: 8347717472677527172}
   - component: {fileID: 8817466172750129587}
   m_Layer: 9
-  m_Name: Peito
+  m_Name: body
   m_TagString: inimigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -671,7 +690,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6242600021763749274}
   m_LocalRotation: {x: -0, y: -0, z: 0.99997103, w: -0.0076156845}
-  m_LocalPosition: {x: 0.016613984, y: -0.06429415, z: 0}
+  m_LocalPosition: {x: 0.01661398, y: -0.06429415, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 247885406810959217}

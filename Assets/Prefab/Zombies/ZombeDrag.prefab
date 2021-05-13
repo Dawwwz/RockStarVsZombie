@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3561261503452983400}
   - component: {fileID: 3561261503452983406}
   - component: {fileID: 3561261503452983401}
+  - component: {fileID: 1110964601}
   m_Layer: 9
   m_Name: ZombeDrag
   m_TagString: inimigo
@@ -116,8 +117,8 @@ MonoBehaviour:
   - {fileID: 3561261503497286900}
   - {fileID: 3561261503576979663}
   m_Bounds:
-    m_Center: {x: -0.1739138, y: 0.46993178, z: 0}
-    m_Extent: {x: 0.26391387, y: 0.23735183, z: 0}
+    m_Center: {x: -0.13199681, y: 0.43410426, z: 0}
+    m_Extent: {x: 0.3909865, y: 0.24974138, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!50 &3561261503452983412
@@ -193,13 +194,12 @@ MonoBehaviour:
   levelManager: {fileID: 0}
   lifeBar: {fileID: 3561261503452983401}
   lifeBarPos: {fileID: 3561261504391076419}
-  lifeMax: 1
-  life: 1
+  lifeMax: 1.5
+  life: 1.5
   dead: 0
   hitPower: 1
   hitSpeed: 1
-  hitBool: 0
-  hitBoolAux: 0
+  hitBool: 1
   movementBool: 1
   movementBooll: 1
   movementVelocity: -1
@@ -229,6 +229,25 @@ MonoBehaviour:
   hud: {fileID: 0}
   lifeBarPrefab: {fileID: 1649073032665256936, guid: 5cdd3970d528d19479580eff58f32dc8, type: 3}
   lifeBarGameObject: {fileID: 0}
+--- !u!95 &1110964601
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3561261503452983415}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 52880d74c2bc1a7498691fec35a04b87, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3561261503461235449
 GameObject:
   m_ObjectHideFlags: 0
@@ -452,7 +471,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3561261504445022688}
   m_Layer: 9
-  m_Name: PEITO
+  m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -498,14 +517,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3561261504512945357}
-  m_LocalRotation: {x: -0, y: -0, z: 0.3336356, w: 0.9427022}
-  m_LocalPosition: {x: -0.10711913, y: -0.024177182, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0.9856428, w: 0.16884445}
+  m_LocalPosition: {x: -0.074524745, y: -0.036900505, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3561261505082371103}
   m_Father: {fileID: 3561261504445022688}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 38.979}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -160.559}
 --- !u!1 &3561261504634443248
 GameObject:
   m_ObjectHideFlags: 0
@@ -549,7 +568,7 @@ GameObject:
   - component: {fileID: 3561261504654462576}
   m_Layer: 9
   m_Name: Cabeca
-  m_TagString: Untagged
+  m_TagString: inimigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -562,7 +581,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3561261504654462578}
   m_LocalRotation: {x: -0, y: -0, z: -0.3557637, w: 0.93457603}
-  m_LocalPosition: {x: 0.01, y: -0.086, z: 0}
+  m_LocalPosition: {x: -0.0034967326, y: -0.066554815, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3561261504445022688}
@@ -609,7 +628,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3561261504818765130}
   m_LocalRotation: {x: 0, y: 0, z: 0.33143383, w: 0.94347847}
-  m_LocalPosition: {x: 0.06877753, y: 0.025087528, z: 0}
+  m_LocalPosition: {x: 0.08231224, y: 0.13580777, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3561261503461235454}

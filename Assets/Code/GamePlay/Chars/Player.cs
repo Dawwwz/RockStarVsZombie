@@ -43,7 +43,7 @@ public class Player : Character
         }
         hitPower = PlayerPrefs.GetFloat("hitPower");
         hud.SetTxtBallPOwer(hitPower.ToString());
-        rigAnime = GetComponent<Animator>();
+        
         RigAnimation(true, false, false, false, false); // COMEÇA COM ANIMAÇÃO IDDLE
         //ballPowerImpulse = GameManager.instanceGameManager.power; //RECEBE A FORÇA DO HIT
         switch (PlayerPrefs.GetString("GuitarUsando")) //SYSTEMA PARA SELECIONAR GUITARRA
@@ -167,7 +167,7 @@ public class Player : Character
                 }
                 if (!player.GetComponent<Ball>().jaFuiAcertado || player.GetComponent<Rigidbody2D>().velocity.x < 0)
                 {
-
+                    player.GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0.1f, 0);
                     player.GetComponent<Ball>().sochama();
                     player.GetComponent<Rigidbody2D>().AddForce(new Vector2(hitTarget.GetAtributeX(), -hitTarget.GetAtributeY() + tendencia), ForceMode2D.Force);
                     // AudioManager.audioManager.SoundEffect(0);
@@ -219,5 +219,6 @@ public class Player : Character
     public void Set_Aumentar_Tempo_Spawn_Bola()
     {
         spawnController.Set_Aumentar_Tempo_Spawn_Bola();
+        
     }
 }

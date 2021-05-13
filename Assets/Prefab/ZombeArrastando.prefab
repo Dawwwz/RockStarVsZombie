@@ -434,13 +434,12 @@ MonoBehaviour:
   levelManager: {fileID: 0}
   lifeBar: {fileID: 6870738002686312912}
   lifeBarPos: {fileID: 727050540965290489}
-  lifeMax: 1
-  life: 1
+  lifeMax: 1.5
+  life: 1.5
   dead: 0
   hitPower: 1
   hitSpeed: 1
   hitBool: 0
-  hitBoolAux: 0
   movementBool: 1
   movementBooll: 0
   movementVelocity: -1

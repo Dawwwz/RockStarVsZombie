@@ -25,23 +25,26 @@ public class BallSpring : Ball
     {
         if (collision.gameObject.tag == "inimigo")
         {
-                    if (collision.collider.name == "Cabeca")
-                    {
-                        rockMode.Set_Active_RockMode();
-                        rockMode.Set_Head_Shot_count();
-                        rockMode.Set_Diminuir_Spawn_Bola();
-                    }
-                    dmgHUD();
-                    if (danoTacada <= 0.001)
-                    {
-                        Destroy(gameObject);
-                    }
-                        podecontar = true; ;
-                        contagem++;
-                        collision.gameObject.GetComponent<Inimigo>().Set_Damage(danoTacada);
-                        collision.gameObject.GetComponent<Inimigo>().Set_Life_Bar_Update();
-                
-            
+            if (collision.collider.name == "Cabeca")
+            {
+            rockMode.Set_Active_RockMode();
+            rockMode.Set_Head_Shot_count();
+            rockMode.Set_Diminuir_Spawn_Bola();
+            }
+            dmgHUD();
+            if (danoTacada <= 0.001)
+            {
+            Destroy(gameObject);
+            }
+            if (podeDarDano)
+            {
+                collision.gameObject.GetComponent<Inimigo>().Set_Damage(danoTacada);
+                collision.gameObject.GetComponent<Inimigo>().Set_Life_Bar_Update();
+                Debug.Log(danoTacada);
+                StartCoroutine(CD());
+            }
+            podecontar = true;
+            contagem++;
         }
     }
     public void OnCollisionStay2D(Collision2D collision)

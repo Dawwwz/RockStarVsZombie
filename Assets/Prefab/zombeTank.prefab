@@ -53,14 +53,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 395442024304271283}
-  m_LocalRotation: {x: 0, y: -0, z: 0.9999968, w: 0.0025604498}
-  m_LocalPosition: {x: -0.01407966, y: 0.110129274, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 0.9895942, w: 0.14388654}
+  m_LocalPosition: {x: -0.01413507, y: 0.111791685, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 395442024333059101}
   m_Father: {fileID: 395442025188830987}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 163.454}
 --- !u!1 &395442024333059098
 GameObject:
   m_ObjectHideFlags: 0
@@ -102,7 +102,7 @@ GameObject:
   m_Component:
   - component: {fileID: 395442024386153260}
   m_Layer: 9
-  m_Name: Peito
+  m_Name: body
   m_TagString: inimigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -237,14 +237,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 395442024524611945}
-  m_LocalRotation: {x: -0, y: -0, z: -0.72425896, w: 0.68952817}
+  m_LocalRotation: {x: -0, y: -0, z: -0.8128399, w: 0.58248705}
   m_LocalPosition: {x: 0.18672222, y: -0.21367843, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 395442025243975745}
   m_Father: {fileID: 395442024386153260}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -92.814}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -108.749}
 --- !u!61 &395442024524611947
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -494,14 +494,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 395442024904429310}
-  m_LocalRotation: {x: 0, y: -0, z: -0.9983051, w: 0.05819829}
-  m_LocalPosition: {x: -0.0012588333, y: -0.10699365, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0.9982326, w: 0.05942791}
+  m_LocalPosition: {x: 0.0025976528, y: -0.10454382, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 395442024672955925}
   m_Father: {fileID: 395442025188830987}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -173.186}
 --- !u!1 &395442025020304831
 GameObject:
   m_ObjectHideFlags: 0
@@ -517,6 +517,7 @@ GameObject:
   - component: {fileID: 395442025020304830}
   - component: {fileID: 395442025020304821}
   - component: {fileID: -5290857043331089995}
+  - component: {fileID: 42458182}
   m_Layer: 9
   m_Name: zombeTank
   m_TagString: inimigo
@@ -627,8 +628,8 @@ MonoBehaviour:
   - {fileID: 395442024663689506}
   - {fileID: 395442024637433386}
   m_Bounds:
-    m_Center: {x: -0.16991198, y: 0.34786153, z: 0}
-    m_Extent: {x: 0.67732376, y: 0.6948776, z: 0}
+    m_Center: {x: -0.16642326, y: 0.3498119, z: 0}
+    m_Extent: {x: 0.6808125, y: 0.6929271, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!114 &395442025020304817
@@ -652,13 +653,12 @@ MonoBehaviour:
   levelManager: {fileID: 0}
   lifeBar: {fileID: -5290857043331089995}
   lifeBarPos: {fileID: 395442024461560205}
-  lifeMax: 5
-  life: 5
+  lifeMax: 4.5
+  life: 4.5
   dead: 0
   hitPower: 2
   hitSpeed: 0.5
   hitBool: 1
-  hitBoolAux: 0
   movementBool: 1
   movementBooll: 0
   movementVelocity: -0.5
@@ -725,6 +725,25 @@ MonoBehaviour:
   hud: {fileID: 0}
   lifeBarPrefab: {fileID: 1649073032665256936, guid: 5cdd3970d528d19479580eff58f32dc8, type: 3}
   lifeBarGameObject: {fileID: 0}
+--- !u!95 &42458182
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 395442025020304831}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b641f8bf5fb1c914887cdff07c925261, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &395442025124028395
 GameObject:
   m_ObjectHideFlags: 0

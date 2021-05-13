@@ -11,7 +11,7 @@ public class Inimigo : Character
     [SerializeField] private LayerMask chao ;
     [SerializeField] private bool piso;
     [SerializeField] private bool congelado,stunado;
-
+   
     void Start()
     {
 
@@ -20,6 +20,7 @@ public class Inimigo : Character
 
         lifeBar.SetLifeBarSpawn();
         lifeBar.SetLifeBarTransform(lifeBarPos);
+        
     }
     private void FixedUpdate()
     {
@@ -52,7 +53,9 @@ public class Inimigo : Character
                     leafControler.Set_leaf_Can_Spawn(false);
                     leafControler.Set_Ho_Get_leaf(false, false, false, true);
                     leafControler.Set_Spawn_Leaf(lifeBarPos);
+                    
                 }
+                spawnController.Set_Select_GameObjec(spawnController.coin, new Vector3 (transform.position.x,transform.position.y+3));
                 dead = true;
                 lifeBar.Get_Life_Bar_GO().GetComponent<DestroyHud1>().destroys = true;
                 Destroy(gameObject);
@@ -74,18 +77,24 @@ public class Inimigo : Character
    
     public void Onground()
     {
-        if (!congelado && !stunado || rb.gravityScale > 0)
+        if (!congelado && !stunado && rb.gravityScale == 1)
         {    
             piso = Physics2D.OverlapCircle(pezin.position, tamanho, chao);
             if (piso)
             {
+                RigAnimationn(false, true);
                 Update_Movement();
             }
         }
-        else if (!congelado && !stunado || rb.gravityScale == 0)
+        else if (!congelado && !stunado && rb.gravityScale == 0)
         {
+                RigAnimationn(false, true);
                 Update_Movement();
-            Debug.Log("entrei");
+           
+        }
+        else if(congelado || stunado)
+        {
+            RigAnimationn(true, false);
         }
     }
     public IEnumerator VelRechargeTime(float timer)
@@ -100,10 +109,10 @@ public class Inimigo : Character
     {
         StartCoroutine(VelRechargeTime(a));
     }
-    public void OnDrawGizmos()
+    public void State(bool stun, bool cold)
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawSphere(pezin.position, tamanho);
+        stunado = stun;
+        congelado = cold;
     }
 }
 

@@ -27,6 +27,7 @@ public class BallCold : Ball
             explosive.gameObject.GetComponent<DestroyHUD3>().danoTacada = danoTacada;
             collision.gameObject.GetComponent<Inimigo>().Set_Life_Bar_Update();
             Instantiate(explosive, transform.position, Quaternion.identity);
+            Destroy(gameObject);
         }
     
     }

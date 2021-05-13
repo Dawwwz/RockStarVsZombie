@@ -11,8 +11,11 @@ public class Coin : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void LateUpdate()
     {
-        
+        if(transform.position.x > 8.50)
+        {
+           transform.position = new Vector3(8.5f, transform.position.y);
+        }
     }
 }

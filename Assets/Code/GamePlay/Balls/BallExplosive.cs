@@ -17,8 +17,8 @@ public class BallExplosive : Ball
                 rockMode.Set_Head_Shot_count();
                 rockMode.Set_Diminuir_Spawn_Bola();
             }
-            collision.gameObject.GetComponent<Inimigo>().Set_Velocity(false);
-            gameObject.GetComponent<CircleCollider2D>().enabled = true;
+                collision.gameObject.GetComponent<Inimigo>().Set_Velocity(false);
+                gameObject.GetComponent<CircleCollider2D>().enabled = true;
                 explosion.gameObject.GetComponent<DestroyHUD3>().danoTacada = danoTacada;
                 dmgHUD();
                 collision.gameObject.GetComponent<Inimigo>().Set_Damage(danoTacada);

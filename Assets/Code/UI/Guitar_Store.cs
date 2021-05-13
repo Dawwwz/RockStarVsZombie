@@ -12,11 +12,13 @@ public class Guitar_Store : MonoBehaviour
     public Image guitar_Img;
     public GameObject guitar_Btn;
     public Text descricao;
+    public CoinManager coin;
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
+        coin = FindObjectOfType<CoinManager>();
+    
+}
 
     // Update is called once per frame
     void Update()
@@ -29,14 +31,14 @@ public class Guitar_Store : MonoBehaviour
         foreach(LojaManager.Guitar guitarStats in LojaManager.instance.guitar_Attribute_List)
         {
            
-            if (guitar_ID == guitarStats.guitarID && GameManager.instanceGameManager.coin >= guitarStats.guitarPrice && !guitarStats.guitarBuy)
+            if (guitar_ID == guitarStats.guitarID && coin.Get_coin() >= guitarStats.guitarPrice && !guitarStats.guitarBuy)
             {
                 Debug.Log("oi");
                 guitarStats.guitarBuy = true;
                 PlayerPrefs.SetInt("GuitarBuy" + guitarStats.guitarID, 1);
                 Debug.Log( guitarStats.guitarID);
-                GameManager.instanceGameManager.CoinDecrease(guitarStats.guitarPrice);
-                GameManager.instanceGameManager.CoinSave();
+                coin.CoinDecrease(guitarStats.guitarPrice);
+                coin.CoinSave();
                 UpdateBtn();
                 
             } 

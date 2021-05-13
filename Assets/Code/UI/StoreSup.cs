@@ -12,7 +12,11 @@ public class StoreSup : MonoBehaviour
     public Text descricao;
     public Image ballSprite;
     public GameObject ballBtn;
-
+    public CoinManager coin;
+    public void Start()
+    {
+        coin = FindObjectOfType<CoinManager>();
+    }
     public void Comprar()
     {
 
@@ -20,12 +24,12 @@ public class StoreSup : MonoBehaviour
         {
 
           
-            if (produto.ballID == ballID && !produto.ballbuy && GameManager.instanceGameManager.coin >= produto.ballPrice)
+            if (produto.ballID == ballID && !produto.ballbuy && coin.Get_coin() >= produto.ballPrice)
             {
 
                 produto.ballbuy = true;
                 UpdateCompra();
-                GameManager.instanceGameManager.CoinDecrease(produto.ballPrice);
+                coin.CoinDecrease(produto.ballPrice);
 
 
             }
@@ -63,7 +67,7 @@ public class StoreSup : MonoBehaviour
                         LojaManager.instance.UpdateBtnTxt(ss.ballID, "usando");
                         
                         PlayerPrefs.SetInt("BallChosed", ss.ballID);
-                        Debug.Log(PlayerPrefs.GetInt("BallChosed") + "salvo");
+
                     }
                     if (produto.ballID == ss.ballID && produto.ballbuy && produto.ballID != ballID)
                     {
