@@ -54,7 +54,8 @@ MonoBehaviour:
   gameWin: 0
   gameIsPlaying: 1
   gamePause: 0
-  time: 180
+  time: 155
+  stopBtn: 0
 --- !u!114 &2077017412
 MonoBehaviour:
   m_ObjectHideFlags: 0

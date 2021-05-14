@@ -59,12 +59,14 @@ public class Pet : Character
         if(collision.gameObject.CompareTag ("Coin") )
         {
             Destroy(collision.gameObject);
+            audioScript.SoundEffect(0);
             coinManager.CoinIncreaseGameplay(Random.Range(1,1000));
             hud.AttHuds();
         }
 
         if (collision.gameObject.CompareTag("leaf")) // achhar outra forma de transportar a folha
         {
+            audioScript.SoundEffect(0);
             Destroy(collision.gameObject.GetComponent<Rigidbody2D>());
             collision.gameObject.transform.SetParent(transform, true);
             collision.transform.position = new Vector2(transform.position.x-0.5f, transform.position.y + 3f);
@@ -88,7 +90,8 @@ public class Pet : Character
                     {
                         if (hitBool)
                         {
-                         gameObject.transform.localScale = new Vector2(1, 2.4f);
+                            audioScript.SoundEffect(2);
+                            gameObject.transform.localScale = new Vector2(1, 2.4f);
                          a.Set_Damage(hitPower);
                          StartCoroutine(HitRechargeTime(hitSpeed));
                          a.Set_Life_Bar_Update();                            

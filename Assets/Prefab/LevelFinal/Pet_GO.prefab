@@ -212,6 +212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b328dffae5792147b5c83271cdc27a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioScript: {fileID: 0}
   spawnController: {fileID: 0}
   hud: {fileID: 0}
   leafControler: {fileID: 0}
@@ -224,8 +225,8 @@ MonoBehaviour:
   lifeMax: 7
   life: 7
   dead: 0
-  hitPower: 0.5
-  hitSpeed: 1
+  hitPower: 0.3
+  hitSpeed: 0.5
   hitBool: 1
   hitBoolDefesa: 0
   movementBool: 1

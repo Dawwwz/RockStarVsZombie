@@ -45,6 +45,7 @@ public class BallSpring : Ball
             }
             podecontar = true;
             contagem++;
+            audioScript.SoundEffect(2);
         }
     }
     public void OnCollisionStay2D(Collision2D collision)
@@ -54,10 +55,11 @@ public class BallSpring : Ball
                     dmgHUD();
                     collision.gameObject.GetComponent<Inimigo>().Set_Damage(danoTacada);
                     collision.gameObject.GetComponent<Inimigo>().Set_Life_Bar_Update();
+                    audioScript.SoundEffect(2);
                     if (danoTacada == 0)
-                    {
-                        Destroy(gameObject);
-                    }
+                            {
+                                Destroy(gameObject);
+                            }
         }
     }
     IEnumerator morrer()

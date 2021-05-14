@@ -72,4 +72,12 @@ public class SpawnControllerEnemy : SpawnController
         yield return new WaitForSeconds(2);
         spawn_CanBe_Method_Timer_Counter = true;
     }
+    public bool Get_SpawnSituation()
+    {
+        return spawn_CanBe_Method_Standart_Cycles;
+    }
+    public bool Get_SpawnSituationn()
+    {
+        return spawn_CanBe_Method_Timer_Counter;
+    }
 }

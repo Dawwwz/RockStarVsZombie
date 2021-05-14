@@ -32,11 +32,13 @@ public class Hud : MonoBehaviour
     [SerializeField] private Image arrowBG;
     [SerializeField] private Image arrowBGs;
     [SerializeField] private Image arrobackground;
+    [SerializeField] private AudioManager audioScript;
     public static int zombienaTela; /// otimizar 
     private void Awake()
     {
         
         arrowBG = GameObject.Find("Img_ArrowBG").GetComponent<Image>();
+        audioScript = FindObjectOfType<AudioManager>();
     }
     void Start()
     {
@@ -63,19 +65,17 @@ public class Hud : MonoBehaviour
     {
         if (levelManager.gameWin)
         {
-
+            audioScript.soundBackgroundAS.Pause();
             // Time.timeScale = 0;
-           // AudioManager.audioManager.guitarBGAS.volume = 0;
+            audioScript.guitarBGAS.Pause();
             coinManager.CoinSave();
-            //pausePanel.SetActive(false);
+            pausePanel.SetActive(false);
             winPanel.SetActive(true);
         }
     }
     public void OpenMenu()
     {
         Time.timeScale = 1;
-       // AudioManager.audioManager.guitarBGAS.volume = 0;
-       // AudioManager.audioManager.SoundBG(5);
         losePanel.SetActive(false);
         winPanel.SetActive(false);
         pausePanel.SetActive(false);
@@ -107,7 +107,8 @@ public class Hud : MonoBehaviour
         if (levelManager.gamePause)
         {
             Time.timeScale = 0;
-
+            audioScript.soundBackgroundAS.Pause();
+            audioScript.guitarBGAS.Pause();
             pausePanel.SetActive(true);
         }
     }
@@ -116,6 +117,8 @@ public class Hud : MonoBehaviour
         levelManager.gamePause = false;
         if (!levelManager.gamePause)
         {
+            audioScript.soundBackgroundAS.UnPause();
+            audioScript.guitarBGAS.UnPause();
             Time.timeScale = 1;
             pausePanel.SetActive(false);
         }
@@ -145,8 +148,10 @@ public class Hud : MonoBehaviour
         }
     }
     public void Set_Lose_Game()
-    {  
-            pausePanel.SetActive(false);
+    {
+            audioScript.soundBackgroundAS.Pause();
+            audioScript.guitarBGAS.Pause();
+        pausePanel.SetActive(false);
             losePanel.SetActive(true);
     }
     public void Set_Btn_Pet()

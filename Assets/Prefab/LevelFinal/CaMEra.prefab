@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2852193258246578958}
   - component: {fileID: 2852193258246578959}
+  - component: {fileID: 1904701}
   m_Layer: 0
   m_Name: CaMEra
   m_TagString: Untagged
@@ -52,8 +53,8 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1
-    height: 1
+    width: 1920
+    height: 1080
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -69,8 +70,16 @@ Camera:
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
+  m_AllowDynamicResolution: 1
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!81 &1904701
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2852193258246578944}
+  m_Enabled: 1

@@ -167,10 +167,11 @@ public class Player : Character
                 }
                 if (!player.GetComponent<Ball>().jaFuiAcertado || player.GetComponent<Rigidbody2D>().velocity.x < 0)
                 {
+                   
                     player.GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0.1f, 0);
                     player.GetComponent<Ball>().sochama();
                     player.GetComponent<Rigidbody2D>().AddForce(new Vector2(hitTarget.GetAtributeX(), -hitTarget.GetAtributeY() + tendencia), ForceMode2D.Force);
-                    // AudioManager.audioManager.SoundEffect(0);
+                    audioScript.SoundEffect(1);
                 }
             }
         }

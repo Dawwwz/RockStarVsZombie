@@ -5,8 +5,8 @@ using UnityEngine.UI;
 public class UI_Menu : MonoBehaviour
 {
     public Text menuLevelCoin;
-    
 
+    [SerializeField] private AudioManager audioScript;
     //StartSCreen
 
     public GameObject startScreen;
@@ -20,6 +20,7 @@ public class UI_Menu : MonoBehaviour
     [Header("SETTINGS")]
     public GameObject settings;
     public GameObject audioEffect;
+    public Sprite[] audioImg;
     public bool somAtivadoOrDesativado;
     public GameObject panelANim;
 
@@ -54,8 +55,9 @@ public class UI_Menu : MonoBehaviour
 
     void Start()
     {
+        audioScript = FindObjectOfType<AudioManager>();
         UpdateUICoin();
-        audioEffect = GameObject.FindGameObjectWithTag ("audio");
+        
     }
 
     // Update is called once per frame
@@ -167,18 +169,16 @@ public class UI_Menu : MonoBehaviour
     }
     public void Sound()
     {
-        if (somAtivadoOrDesativado)
+        if (audioScript.guitarBGAS.mute)
         {
-            somAtivadoOrDesativado = false;
-            AudioManager.audioManager.Mute();
+            audioScript.UnMute();
+            audioEffect.GetComponent<Image>().sprite = audioImg[1];
         }
-        else if (!somAtivadoOrDesativado)
+        else
         {
-            AudioManager.audioManager.UnMute();
-            somAtivadoOrDesativado = true;
-           
+            audioScript.Mute();
+            audioEffect.GetComponent<Image>().sprite = audioImg[0];
         }
- 
     }
 
     public void Creditus()

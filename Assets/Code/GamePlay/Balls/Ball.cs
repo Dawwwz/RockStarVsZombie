@@ -10,6 +10,7 @@ public class Ball : MonoBehaviour
     [SerializeField] protected SpawnController spawnController;
     [SerializeField] protected Hud hudd;
     [SerializeField] protected RockMode rockMode;
+    [SerializeField] protected AudioManager audioScript;
 
     public Canvas hud;
     public GameObject dmgPref;
@@ -109,6 +110,7 @@ public class Ball : MonoBehaviour
     }
     public void Set_Search_For_Refs()
     {
+        audioScript = FindObjectOfType<AudioManager>();
         spawnController = FindObjectOfType<SpawnController>(); 
         rockMode = FindObjectOfType<RockMode>();
         hudd = FindObjectOfType<Hud>();

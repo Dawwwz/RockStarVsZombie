@@ -17,6 +17,7 @@ TagManager:
   - PlayerSub
   - Canvas_WP
   - Flecha
+  - Audio
   layers:
   - Default
   - TransparentFX

@@ -37,13 +37,12 @@ public class Inimigo : Character
             gameObject.GetComponent<Rigidbody2D>().gravityScale = 1;
         }
     }
-    void Vida()
+    protected void Vida()
     {
         if (life <= 0)
         {
             if (!dead)
             {
-                // GameManager.instanceGameManager.zombiesAmount++; // SPAWN CONTROLER 
                 if (
                     leafControler.Get_Leaf_can_Spawn() && 
                     PlayerPrefs.GetInt("Level" + levelManager.scenaAtualInt) == 0 

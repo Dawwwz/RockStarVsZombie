@@ -5,7 +5,9 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    public static AudioManager audioManager;
+    
+
+    [SerializeField] LevelManager levelManager;
     public AudioSource soundBackgroundAS;
     public AudioClip[] soundBackgroundAC;
 
@@ -14,30 +16,19 @@ public class AudioManager : MonoBehaviour
 
     public AudioSource soundEffectAS;
     public AudioClip[] soundEffectAC;
-    // Start is called before the first frame update
-    private void Awake()
-    {
-        if(audioManager == null)
-        {
-            audioManager = this;
-            DontDestroyOnLoad(this.gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-        
-    }
+    // Start is called before the first frame upda
     void Start()
     {
-        SoundBG(5);
+        SoundBG(0);
+        guitarBG(0);
         /*
-        switch (SceneManager.GetActiveScene().name)
+        switch (levelManager.scenaAtualString)
         {
             case "Level1":
-                AudioManager.audioManager.SoundBG(1);
-                AudioManager.audioManager.guitarBG(1);
+                SoundBG(0);
+                guitarBG(0);
                 break;
+        }
             case "Level2":
                 AudioManager.audioManager.SoundBG(2);
                 AudioManager.audioManager.guitarBG(2);
@@ -71,7 +62,11 @@ public class AudioManager : MonoBehaviour
                 AudioManager.audioManager.guitarBG(9);
                 break;
         */
-        }
+
+        // 0  coin
+        // 1  kick
+        // 2  blood
+    }
     public void Update()
     {
         
@@ -84,7 +79,7 @@ public class AudioManager : MonoBehaviour
     }
     public void guitarBG(int clipIndex)
     {
-        guitarBGAS.clip = soundBackgroundAC[clipIndex];
+        guitarBGAS.clip = guitarBGAC[clipIndex];
         guitarBGAS.Play();
     }
     public void SoundEffect(int clipIndex)
@@ -103,5 +98,16 @@ public class AudioManager : MonoBehaviour
         soundBackgroundAS.mute = false;
         guitarBGAS.mute = false;
         soundEffectAS.mute = false ;
+    }
+    public void RockMode0()
+    {
+
+             guitarBGAS.volume = 0;
+
+    }
+    public void RockMode()
+    {  
+            guitarBGAS.volume = 1;
+     
     }
 }

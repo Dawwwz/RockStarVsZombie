@@ -5,6 +5,7 @@ using UnityEngine;
 public class Character : MonoBehaviour
 {
     [Header("System's to help")]
+    [SerializeField] protected AudioManager  audioScript;
     [SerializeField] protected SpawnControlerBall spawnController;
     [SerializeField] protected Hud hud;
     [SerializeField] protected LeafControler leafControler;
@@ -106,6 +107,7 @@ public class Character : MonoBehaviour
     }
     public void Set_Search_For_Refs()
     {
+        audioScript = FindObjectOfType<AudioManager>();
         rigAnime = GetComponent<Animator>();
         spawnController = FindObjectOfType<SpawnControlerBall>();
         leafControler = FindObjectOfType<LeafControler>();

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RockMode : MonoBehaviour
 {
+    [SerializeField] protected AudioManager audioScript;
     [SerializeField] private Player player;
     [SerializeField] private Hud hud;
     [Header("RockMode Timer")]
@@ -20,6 +21,7 @@ public class RockMode : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audioScript = FindObjectOfType<AudioManager>();
         player = FindObjectOfType<Player>();
         hud = FindObjectOfType<Hud>();
     }
@@ -37,6 +39,7 @@ public class RockMode : MonoBehaviour
             {
                 head_Shot_Count_Save = head_Shot_Count;
                 rock_Star_Aura = true;
+                
                 player.Set_Sayajin_Aura();
             }
 
@@ -47,6 +50,7 @@ public class RockMode : MonoBehaviour
                 if (head_Shot_Count == head_Shot_Count_Save)
                 {
                     rock_Star_Aura = false;
+                    audioScript.RockMode0();
                     player.Set_Sayajin_Aura_off();
                     timer_Bool = false;
                     Set_Head_Shot_count_O();
@@ -61,6 +65,7 @@ public class RockMode : MonoBehaviour
     }
     public void Set_Active_RockMode()
     {
+        audioScript.RockMode();
         timer_Bool = true;
     }
     public void Set_Head_Shot_count()
