@@ -43,6 +43,7 @@ public class Bos : Inimigo
     IEnumerator lala()
     {
         RigAnimationn(false, true);
+        Debug.Log("lala");
         yield return new WaitForSeconds(2);
         RigAnimationn(true,false );
     }

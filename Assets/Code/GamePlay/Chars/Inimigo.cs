@@ -14,7 +14,8 @@ public class Inimigo : Character
    
     void Start()
     {
-
+        transform.position = new Vector3(transform.position.x + Random.Range(0, 3), transform.position.y);
+        
         Set_Zombie_Fly();
         leafControler.Set_Leaf_Spawn();
 

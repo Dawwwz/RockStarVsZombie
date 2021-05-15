@@ -11,6 +11,7 @@ public class Pet : Character
     public bool buffado;
     public bool petTelp;
     public bool contador;
+    
     public float tempo;
     [SerializeField] private CoinManager coinManager;
     [SerializeField] private Transform pezin;
@@ -20,6 +21,7 @@ public class Pet : Character
 
     void Start()
     {
+        
         coinManager = FindObjectOfType<CoinManager>();
         lifeBar.SetLifeBarSpawn();
         lifeBar.SetLifeBarTransform(lifeBarPos);
@@ -77,6 +79,7 @@ public class Pet : Character
         {    
             if (!voltando)
             {
+               
                 Inimigo a = collision.gameObject.GetComponent<Inimigo>();
                 if (a != null)
                 {
@@ -109,6 +112,7 @@ public class Pet : Character
 
             if (!voltando)
             {
+                
                 Inimigo a = collision.gameObject.GetComponent<Inimigo>();
                 if (a != null)
                 {
@@ -117,22 +121,25 @@ public class Pet : Character
                     Set_Damage(a.Get_HitPower());
                     StartCoroutine(a.HitRechargeTime(a.Get_hitspeed()));
                     Set_Life_Bar_Update();
+                    
                     }
                     if (buffado)
                     {
                         if (hitBool)
                         {
+
                             gameObject.transform.localScale = new Vector2(1, 2.4f);
                             a.Set_Damage(hitPower);
                             StartCoroutine(HitRechargeTime(hitSpeed));
                             a.Set_Life_Bar_Update();
+                        
                         }
                     }
                 }
             }      
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+      private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag =="PlayerSub")
         {
@@ -188,8 +195,9 @@ public class Pet : Character
             // AJEITAR PARADA DA FOLLHAAA SKALE E VOLTAR NAO TA COLIDINDO QUANDO VOLTAA
             if ( !voltando && life <= 0 || transform.position.x > 8.51f  /* || transform.childCount > 1*/)
             {
+                
                 gameObject.GetComponent<CapsuleCollider2D>().size = new Vector2(gameObject.GetComponent<CapsuleCollider2D>().size.x, 1);
-                gameObject.transform.localScale = new Vector2(1, 1);
+                gameObject.transform.localScale = new Vector2(-1, 1);
                 gameObject.GetComponent<CapsuleCollider2D>().usedByEffector = true;
                 movementVelocity = 5;
                 if(movementVelocity > 0)
@@ -208,12 +216,15 @@ public class Pet : Character
         
             if (transform.position.x < -8 && !voltando && parado)
             {
-                gameObject.GetComponent<CapsuleCollider2D>().usedByEffector = false;
+            gameObject.transform.localScale = new Vector2(1, 1);
+            gameObject.GetComponent<CapsuleCollider2D>().usedByEffector = false;
                 movementVelocity = 2;
                 movementBool = true;
                 parado = false;
-                if(movementVelocity < 0)
+            RigAnimationn(false, true);
+            if (movementVelocity < 0)
                 {
+                
                 movementVelocity = movementVelocity * -1;
                 }
             }
@@ -222,6 +233,7 @@ public class Pet : Character
     public void Set_IA_Parado()
     {
         // colidiu com o player
+        RigAnimationn(true, false);
         movementVelocity = 0;
         movementBool = false;
         life = lifeMax;

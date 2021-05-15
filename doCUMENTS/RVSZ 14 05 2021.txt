@@ -1,0 +1,74 @@
+-AUDIO 
+      -IMPLEMENTAR AS MUSICAS QUE O BENHUR QUIZER
+	  -ALGUMA COISINHA QUE PRECISAR
+	  
+-BOSS 
+	  -IMPLEMENTAR ANIMAÇÃO 
+	  -MELHORAR A BARRA DE VIDA
+	  -Ajustar o tempo de spawn d zombie para ter a vida do boss (IF BOSS == NULL)
+	  -IMPLEMENTAR tela de vitoria de creditos sla ao vencer
+	  -implementar logica para clicar no btn 10 e verificar se tem as 9 folhas
+	  
+
+-UI   
+	  - ancorar direitinho as ui
+	  - FONTe  UI
+	  - POSIÇÃO dos elementos na UI
+	  - DESCRIÇÃO das UI
+	  - BOTOES GUITARRA SE TA USANDO OU NÃO
+	  - adicionar botão de voltar a compra de força dos atributos
+	  - adicionar tela com roteiro e historia do game
+	  
+-BALANCEAMENTO
+
+	  -BOLA BASE / tudo funcionando ok ate 
+	  -BOLA MOLA / a unica que ta perfeita
+	  -BOLA PET  / ta muito bufado (o dano do dog) 
+	  -BOLA GELO / nerfar o range talvez?
+	  -BOLA BUUM / aumentar o range 
+	  
+	  -PLAYER / força ta ficando exagerada bem facil ...
+	  
+	  -LEAF / DIMINUIR A CHANCE DE SPAWN
+	  
+	  LEVEL 1 / ta bom
+	  
+	  LEVEL 2 / ta ruin morre por conta do zombie fast / programação não ta muito preparada para aajustes necessarios
+	  
+	  LEVEL 3
+	  
+	  LEVEL 4
+	  
+	  LEVEL 5
+	  
+	  LEVEL 6 
+	  
+	  LEVEL 7 
+	  
+	  LEVEL 8
+	  
+	  LEVEL 9
+	  
+	  LEVEL 10
+	  
+-ECONOMIA 
+	  -zombies spawnam quanto? muda para cada faze?
+	  -quanto vai custar cada bola?
+	  -ATRIBUTO FORÇA PRECISA CUSTAR GRANA
+	  -PISCAR A MOEDA SE NAO TIVER GRANA PRA COMPRAR ALGO
+-BUGS 
+	  -ZOMBIES / se ficar parado depois que o tempo acabou ajeitar a rotação deles pra andar
+	  -COIN / TA FLUTUANDO E DANDO UNS SALTOS MUITO BISARROS
+	  -guitarra base nao ta funcionando na UI dela quadrado branco
+	  -TA SPAWNANDO 2 FOLHA PQQ???
+	  -concertar scala da folha (transform.position)
+	  
+-Features novas pzara futuro
+
+	  -camera acompanhar a bola 
+	  -carregar dano ficar só quando rock mode tiver ativo
+	  -PET / continuar brigando mesmo q tenha chegado no limite do mov até matar 1
+	  -coldwon para o dog ir dnv
+	  - dog fica virado pra la <<< quando volta
+	  
+-PUBLICAÇÃO

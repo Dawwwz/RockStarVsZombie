@@ -59,7 +59,7 @@ public class Player : Character
 
                 if (guitarDmg) // DOBRA O DANO DO HIT (CASO A GUITARRA DE DOBRAR O DANO ESTEJA SELECIONADA)         
                 {
-                    hitPower *= 2;
+                    hitPower *= 1.25f;
                 }
                 break;
             case "double":

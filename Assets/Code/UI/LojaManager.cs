@@ -210,7 +210,6 @@ public class LojaManager : MonoBehaviour
                 
             if (PlayerPrefs.GetInt("GuitarBuy"+guitar_Attribute.guitarID) == 1)
             {
-                Debug.Log((PlayerPrefs.GetInt("GuitarBuy" + guitar_Attribute.guitarID)));
                 guitar_Store.guitar_Img.sprite = Resources.Load<Sprite>("Sprites/" + guitar_Attribute.guitarSpriteName);
                 guitar_Store.guitar_Img.color = Color.white;
                 guitar_Attribute.guitarBuy = true;

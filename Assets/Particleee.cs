@@ -16,7 +16,7 @@ public class Particleee : MonoBehaviour
         if (other.gameObject.CompareTag("inimigo"))
         {
 
-            other.gameObject.GetComponent<Inimigo>().Set_Damage(player.Get_HitPower() / 4);
+            other.gameObject.GetComponent<Inimigo>().Set_Damage(player.Get_HitPower() / 2);
             other.gameObject.GetComponent<Inimigo>().Set_Life_Bar_Update();
         }
     }

@@ -13,9 +13,13 @@ public class Coin : MonoBehaviour
     // Update is called once per frame
     private void LateUpdate()
     {
-        if(transform.position.x > 8.50)
+        if(transform.position.x > 8.6 || transform.position.x < -8.70 || transform.position.y < -5)
         {
-           transform.position = new Vector3(8.5f, transform.position.y);
+           transform.position = new Vector3(8.5f, -1);
+           if(GetComponent<Rigidbody2D>() != null)
+            {
+                GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+            }
         }
     }
 }
