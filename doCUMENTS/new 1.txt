@@ -1,0 +1,8 @@
+AUDIO
+1. musica start screen
+2.menu
+3.player batendo na bola
+4.bola batendo no zombie
+5.pegando moeda
+6.dog andando
+7.carregando hit
